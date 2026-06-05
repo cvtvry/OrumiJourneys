@@ -19,11 +19,6 @@ body{
   color:white;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
 /* ================================================= */
 /* ===================== LOADER ==================== */
 /* ================================================= */
@@ -75,15 +70,11 @@ a{
 .header{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   padding:20px 25px;
-
   z-index:1000;
 
   background:
@@ -100,16 +91,6 @@ a{
   font-family:'Cormorant Garamond', serif;
   font-size:2.3rem;
   letter-spacing:2px;
-  font-weight:600;
-}
-
-.logo a{
-  color:white;
-  transition:.3s;
-}
-
-.logo a:hover{
-  color:#CFAE72;
 }
 
 /* ================================================= */
@@ -117,33 +98,24 @@ a{
 /* ================================================= */
 
 .menu-toggle{
-
   width:35px;
   height:25px;
-
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-
   cursor:pointer;
 }
 
 .menu-toggle span{
-
   height:3px;
-
   background:white;
-
   border-radius:10px;
 }
 
 .menu{
-
   position:fixed;
-
   top:0;
   right:-100%;
-
   width:280px;
   height:100vh;
 
@@ -164,27 +136,16 @@ a{
 }
 
 .menu a{
-
   display:block;
-
   padding:20px 40px;
-
   color:white;
-
+  text-decoration:none;
   transition:.3s;
 }
 
 .menu a:hover{
-
-  background:
-    rgba(255,255,255,0.06);
-
+  background:rgba(255,255,255,0.06);
   padding-left:55px;
-}
-
-.menu a.active{
-
-  color:#CFAE72;
 }
 
 /* ================================================= */
@@ -192,13 +153,11 @@ a{
 /* ================================================= */
 
 .hero{
-
   height:100vh;
 
   display:flex;
   justify-content:center;
   align-items:center;
-
   text-align:center;
 
   position:relative;
@@ -256,12 +215,10 @@ a{
 /* ================================================= */
 
 .fog{
-
   position:absolute;
   inset:0;
 
   background:
-
     radial-gradient(
       circle at 30% 60%,
       rgba(255,255,255,0.05),
@@ -297,12 +254,10 @@ a{
 /* ================================================= */
 
 .glow{
-
   position:absolute;
   inset:0;
 
   background:
-
     radial-gradient(
       circle at 50% 70%,
       rgba(170,184,194,0.10),
@@ -317,49 +272,29 @@ a{
 /* ================================================= */
 
 .hero-content{
-
   position:relative;
   z-index:3;
 
-  max-width:850px;
+  max-width:800px;
 
   padding:20px;
+
+  margin-top:-40px;
 
   animation:fadeUp 2s ease;
 }
 
 .slogan{
-
   font-family:'Cormorant Garamond', serif;
-
   font-size:2rem;
-
   margin-bottom:20px;
-
   color:#D7E1E8;
 }
 
 .hero h1{
-
   font-size:3.5rem;
-
   font-weight:300;
-
   line-height:1.2;
-
-  margin-bottom:25px;
-}
-
-.hero-subtitle{
-
-  max-width:650px;
-
-  margin:auto;
-
-  color:#D7E1E8;
-
-  line-height:1.8;
-
   margin-bottom:35px;
 }
 
@@ -368,19 +303,12 @@ a{
 /* ================================================= */
 
 .btn{
-
-  display:inline-block;
-
   padding:16px 40px;
-
   border:none;
-
   border-radius:50px;
-
   background:#B99763;
-
   color:white;
-
+  cursor:pointer;
   transition:.4s;
 
   box-shadow:
@@ -390,9 +318,7 @@ a{
 }
 
 .btn:hover{
-
   transform:translateY(-6px);
-
   background:#CFAE72;
 }
 
@@ -402,23 +328,16 @@ a{
 
 .particles span,
 .leaves span{
-
   position:absolute;
-
   bottom:-20px;
-
   border-radius:50%;
-
   animation:float linear infinite;
 }
 
 .particles span{
-
   width:6px;
   height:6px;
-
-  background:
-    rgba(255,255,255,0.25);
+  background:rgba(255,255,255,0.25);
 }
 
 @keyframes float{
@@ -439,9 +358,7 @@ a{
 /* ================================================= */
 
 .leaves span{
-
   top:-10%;
-
   width:18px;
   height:18px;
 
@@ -462,7 +379,6 @@ a{
 @keyframes leafFall{
 
   from{
-
     transform:
       translateY(-10vh)
       rotate(0deg);
@@ -471,7 +387,6 @@ a{
   }
 
   to{
-
     transform:
       translateY(120vh)
       rotate(360deg);
@@ -897,11 +812,8 @@ a{
 }
 
 .section-text{
-
   color:#D5DDE3;
-
   line-height:1.9;
-
   font-size:1.08rem;
 }
 
@@ -982,6 +894,10 @@ a{
     0 0 35px rgba(185,151,99,0.14);
 }
 
+/* ================================================= */
+/* ================= ASIAN FRAME =================== */
+/* ================================================= */
+
 .destination-card::before{
 
   content:"";
@@ -998,25 +914,43 @@ a{
   z-index:5;
 
   pointer-events:none;
+
+  box-shadow:
+    inset 0 0 25px rgba(185,151,99,0.04);
 }
+
+.destination-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(120,30,20,0.08),
+      transparent 28%,
+      transparent 70%,
+      rgba(120,30,20,0.05)
+    );
+
+  z-index:1;
+
+  pointer-events:none;
+
+  mix-blend-mode:screen;
+}
+
+/* ================================================= */
+/* ======================= IMAGE =================== */
+/* ================================================= */
 
 .destination-image{
   position:absolute;
   inset:0;
-}
-
-.destination-image img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transition:1.3s;
-}
-
-.destination-card:hover img{
-  transform:scale(1.08);
 }
 
 .destination-image::after{
@@ -1029,6 +963,24 @@ a{
 
   background:
 
+    /* ================= TOP ATMOSPHERE ================= */
+
+    linear-gradient(
+      to bottom,
+      rgba(18,24,32,0.08),
+      transparent 22%
+    ),
+
+    /* ================= CENTER SOFT FOG ================= */
+
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(18,24,32,0.18),
+      transparent 45%
+    ),
+
+    /* ================= MAIN CINEMATIC SHADOW ================= */
+
     linear-gradient(
       to top,
       rgba(10,14,18,0.92) 0%,
@@ -1036,6 +988,16 @@ a{
       rgba(18,24,32,0.22) 58%,
       transparent 78%
     );
+}
+.destination-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1.3s;
+}
+
+.destination-card:hover img{
+  transform:scale(1.08);
 }
 
 /* ================================================= */
@@ -1068,6 +1030,43 @@ a{
 
   border:
     1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 10px 30px rgba(0,0,0,0.22),
+
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+/* ================================================= */
+/* ================= TEXT BACKDROP ================= */
+/* ================================================= */
+
+.destination-content::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:-10%;
+  bottom:-20px;
+
+  width:120%;
+  height:220px;
+
+  background:
+
+    radial-gradient(
+      ellipse at center,
+      rgba(10,14,18,0.55),
+      transparent 72%
+    );
+
+  filter:blur(24px);
+
+  z-index:-1;
+
+  pointer-events:none;
 }
 
 .destination-content h3{
@@ -1076,7 +1075,15 @@ a{
 
   font-size:2.6rem;
 
+  line-height:1.05;
+
   margin-bottom:14px;
+
+  color:white;
+
+  text-shadow:
+
+    0 6px 18px rgba(0,0,0,0.55);
 }
 
 .destination-content p{
@@ -1086,7 +1093,14 @@ a{
   line-height:1.7;
 
   margin-bottom:24px;
+
+  text-shadow:
+    0 4px 12px rgba(0,0,0,0.45);
 }
+
+/* ================================================= */
+/* ====================== BUTTON =================== */
+/* ================================================= */
 
 .destination-btn{
 
@@ -1104,283 +1118,23 @@ a{
   background:
     rgba(255,255,255,0.10);
 
+  backdrop-filter:blur(10px);
+
   color:white;
 
   transition:.4s;
 
   border:
     1px solid rgba(255,255,255,0.08);
+
+  width:fit-content;
 }
 
 .destination-btn:hover{
-
   background:
     rgba(255,255,255,0.18);
 
   transform:translateX(5px);
-}
-
-/* ================================================= */
-/* ================= PROMOTIONS ==================== */
-/* ================================================= */
-
-.promotions{
-
-  padding:
-    140px 7%
-    140px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #2E3D49,
-      #25313B
-    );
-}
-
-.promo-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
-  gap:35px;
-}
-
-.promo-card{
-
-  padding:40px;
-
-  border-radius:30px;
-
-  background:
-    rgba(255,255,255,0.04);
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter:blur(15px);
-
-  transition:.5s;
-}
-
-.promo-card:hover{
-
-  transform:
-    translateY(-10px);
-
-  border:
-    1px solid rgba(207,174,114,0.35);
-}
-
-.promo-badge{
-
-  display:inline-block;
-
-  padding:
-    8px 18px;
-
-  border-radius:999px;
-
-  background:#CFAE72;
-
-  color:#1f2933;
-
-  font-size:.8rem;
-
-  font-weight:700;
-
-  margin-bottom:20px;
-}
-
-.promo-card h3{
-
-  font-family:
-    'Cormorant Garamond',
-    serif;
-
-  font-size:2rem;
-
-  margin-bottom:15px;
-}
-
-.promo-card p{
-
-  line-height:1.8;
-
-  color:#D5DDE3;
-
-  margin-bottom:25px;
-}
-
-.promo-btn{
-
-  display:inline-block;
-
-  padding:
-    14px 24px;
-
-  border-radius:50px;
-
-  background:
-    rgba(255,255,255,0.08);
-
-  color:white;
-
-  transition:.4s;
-}
-
-.promo-btn:hover{
-
-  background:
-    rgba(255,255,255,0.18);
-}
-
-/* ================================================= */
-/* ================= NEWSLETTER ==================== */
-/* ================================================= */
-
-.newsletter-section{
-
-  padding:
-    140px 7%;
-
-  text-align:center;
-
-  background:#22303A;
-}
-
-.newsletter-form{
-
-  display:flex;
-
-  justify-content:center;
-
-  gap:15px;
-
-  flex-wrap:wrap;
-
-  margin-top:40px;
-}
-
-.newsletter-form input{
-
-  width:320px;
-
-  max-width:100%;
-
-  padding:16px 20px;
-
-  border:none;
-
-  border-radius:50px;
-
-  outline:none;
-}
-
-.newsletter-form button{
-
-  padding:
-    16px 28px;
-
-  border:none;
-
-  border-radius:50px;
-
-  background:#CFAE72;
-
-  color:#1f2933;
-
-  cursor:pointer;
-
-  font-weight:600;
-
-  transition:.3s;
-}
-
-.newsletter-form button:hover{
-
-  transform:translateY(-3px);
-}
-
-/* ================================================= */
-/* ==================== FOOTER ===================== */
-/* ================================================= */
-
-.footer{
-
-  background:#18222A;
-
-  padding:80px 7% 30px;
-}
-
-.footer-content{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-  gap:40px;
-
-  margin-bottom:50px;
-}
-
-.footer-brand h3{
-
-  font-family:
-    'Cormorant Garamond',
-    serif;
-
-  font-size:2rem;
-
-  margin-bottom:10px;
-}
-
-.footer-links{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:12px;
-}
-
-.footer-links h4{
-
-  color:#CFAE72;
-
-  margin-bottom:10px;
-}
-
-.footer-links a{
-
-  color:#D5DDE3;
-
-  transition:.3s;
-}
-
-.footer-links a:hover{
-
-  color:#CFAE72;
-}
-
-.footer-links p{
-
-  color:#D5DDE3;
-}
-
-.footer-bottom{
-
-  text-align:center;
-
-  padding-top:25px;
-
-  border-top:
-    1px solid rgba(255,255,255,0.08);
-
-  color:#AAB8C2;
 }
 
 /* ================================================= */
@@ -1409,12 +1163,10 @@ a{
     width:100%;
   }
 
-  .destinations,
-  .promotions,
-  .newsletter-section{
-
-    padding-left:6%;
-    padding-right:6%;
+  .destinations{
+    padding:
+      170px 6%
+      120px;
   }
 
   .section-title{
@@ -1425,9 +1177,5 @@ a{
     min-height:360px;
   }
 
-  .newsletter-form{
-    flex-direction:column;
-    align-items:center;
-  }
-
 }
+</html>
