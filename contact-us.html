@@ -1,1 +1,711 @@
 
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>
+    Contact Us | Orumi Journeys
+  </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Nunito:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#101820;
+      color:white;
+      font-family:'Nunito',sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header{
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      width:100%;
+
+      padding:24px 7vw;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      z-index:1000;
+
+      background:rgba(10,15,20,0.35);
+      backdrop-filter:blur(14px);
+
+      border-bottom:1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .logo{
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;
+
+    }
+
+    .menu{
+
+      display:flex;
+      gap:34px;
+
+    }
+
+    .menu a{
+
+      opacity:.7;
+      transition:.4s;
+
+    }
+
+    .menu a:hover,
+    .menu a.active{
+
+      opacity:1;
+
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+
+      height:70vh;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      text-align:center;
+
+      background:
+      linear-gradient(
+      rgba(10,15,20,.55),
+      rgba(10,15,20,.85)),
+      url("img/contact-hero.jpg");
+
+      background-size:cover;
+      background-position:center;
+
+    }
+
+    .hero-content{
+
+      max-width:900px;
+      padding:0 20px;
+
+    }
+
+    .hero-mini{
+
+      text-transform:uppercase;
+      letter-spacing:5px;
+      opacity:.7;
+      margin-bottom:20px;
+
+    }
+
+    .hero h1{
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(3rem,7vw,5.5rem);
+      margin-bottom:20px;
+
+    }
+
+    .hero p{
+
+      opacity:.85;
+      line-height:1.8;
+
+    }
+
+    /* ================= GENERAL SECTION ================= */
+
+    section{
+
+      padding:100px 7vw;
+
+    }
+
+    .section-title{
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:3rem;
+      margin-bottom:20px;
+
+    }
+
+    .section-subtitle{
+
+      opacity:.75;
+      margin-bottom:50px;
+      line-height:1.8;
+
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-grid{
+
+      display:grid;
+      grid-template-columns:1.4fr .8fr;
+      gap:40px;
+
+    }
+
+    .card{
+
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.06);
+      backdrop-filter:blur(14px);
+      border-radius:30px;
+      padding:40px;
+
+    }
+
+    .form-grid{
+
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+
+    }
+
+    .field{
+
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+
+    }
+
+    input,
+    textarea{
+
+      padding:16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.06);
+      color:white;
+      outline:none;
+
+    }
+
+    textarea{
+
+      min-height:180px;
+      resize:vertical;
+
+    }
+
+    .btn{
+
+      margin-top:25px;
+
+      padding:16px 28px;
+
+      border:none;
+      border-radius:999px;
+
+      cursor:pointer;
+
+      background:white;
+      color:#101820;
+
+      font-weight:600;
+
+    }
+
+    .contact-info div{
+
+      margin-bottom:25px;
+
+    }
+
+    .contact-info h3{
+
+      margin-bottom:8px;
+
+    }
+
+    .contact-info p{
+
+      opacity:.8;
+
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq{
+
+      display:grid;
+      gap:20px;
+
+    }
+
+    .faq-item{
+
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:20px;
+      padding:25px;
+
+    }
+
+    .faq-item h3{
+
+      margin-bottom:12px;
+
+    }
+
+    .faq-item p{
+
+      opacity:.8;
+      line-height:1.7;
+
+    }
+
+    /* ================= SOCIAL ================= */
+
+    .socials{
+
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+
+    }
+
+    .social{
+
+      padding:18px 28px;
+
+      border-radius:999px;
+
+      background:rgba(255,255,255,.06);
+
+      border:1px solid rgba(255,255,255,.08);
+
+    }
+
+    /* ================= MAP ================= */
+
+    .map{
+
+      overflow:hidden;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .map iframe{
+
+      width:100%;
+      height:500px;
+      border:none;
+
+    }
+
+    /* ================= CTA ================= */
+
+    .cta{
+
+      text-align:center;
+
+      background:
+      linear-gradient(
+      to bottom,
+      #17232d,
+      #101820);
+
+    }
+
+    .cta h2{
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:3.5rem;
+      margin-bottom:20px;
+
+    }
+
+    .cta p{
+
+      max-width:700px;
+      margin:auto;
+      opacity:.8;
+      line-height:1.8;
+
+    }
+
+    .cta-btn{
+
+      display:inline-block;
+
+      margin-top:30px;
+
+      padding:18px 34px;
+
+      border-radius:999px;
+
+      background:white;
+      color:#101820;
+
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+
+      padding:50px 7vw;
+
+      text-align:center;
+
+      border-top:1px solid rgba(255,255,255,.06);
+
+      background:#0c141b;
+
+    }
+
+    footer p{
+
+      opacity:.7;
+
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp-float{
+
+      position:fixed;
+
+      right:25px;
+      bottom:25px;
+
+      width:70px;
+      height:70px;
+
+      border-radius:50%;
+
+      background:#25D366;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-size:2rem;
+
+      z-index:999;
+
+      box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1000px){
+
+      .contact-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+    }
+
+    @media(max-width:800px){
+
+      .menu{
+
+        display:none;
+
+      }
+
+      .hero{
+
+        height:85vh;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">
+    Orumi Journeys
+  </div>
+
+  <nav class="menu">
+
+```
+<a href="index.html">Home</a>
+
+<a href="destinations.html">Destinations</a>
+
+<a href="book-now.html">Book Now</a>
+
+<a href="about-us.html">About Us</a>
+
+<a href="contact-us.html" class="active">Contact</a>
+```
+
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+```
+<p class="hero-mini">
+  Contact Us
+</p>
+
+<h1>
+  Let's Design
+  <br>
+  Your Next Journey
+</h1>
+
+<p>
+  Our team is ready to help you create a cinematic and unforgettable travel experience throughout Asia.
+</p>
+```
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    Get in Touch
+  </h2>
+
+  <p class="section-subtitle">
+    Tell us about your dream trip and we'll get back to you within 24 hours.
+  </p>
+
+  <div class="contact-grid">
+
+```
+<div class="card">
+
+  <div class="form-grid">
+
+    <div class="field">
+      <label>Name</label>
+      <input type="text">
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email">
+    </div>
+
+  </div>
+
+  <div class="field" style="margin-top:20px;">
+    <label>Subject</label>
+    <input type="text">
+  </div>
+
+  <div class="field" style="margin-top:20px;">
+    <label>Message</label>
+    <textarea></textarea>
+  </div>
+
+  <button class="btn">
+    Send Message
+  </button>
+
+</div>
+
+<div class="card contact-info">
+
+  <div>
+    <h3>Email</h3>
+    <p>hello@orumijourneys.com</p>
+  </div>
+
+  <div>
+    <h3>Phone</h3>
+    <p>+56 9 1234 5678</p>
+  </div>
+
+  <div>
+    <h3>Office Hours</h3>
+    <p>Monday - Friday<br>09:00 - 18:00</p>
+  </div>
+
+  <div>
+    <h3>Location</h3>
+    <p>Temuco, Chile</p>
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    Frequently Asked Questions
+  </h2>
+
+  <div class="faq">
+
+```
+<div class="faq-item">
+  <h3>How long does it take to receive a reply?</h3>
+  <p>Usually within 24 business hours.</p>
+</div>
+
+<div class="faq-item">
+  <h3>Can I customize my trip?</h3>
+  <p>Yes, every itinerary can be fully personalized.</p>
+</div>
+
+<div class="faq-item">
+  <h3>Do packages include flights?</h3>
+  <p>Depending on the package selected.</p>
+</div>
+```
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    Follow Us
+  </h2>
+
+  <div class="socials">
+
+```
+<a href="#" class="social">Instagram</a>
+
+<a href="#" class="social">TikTok</a>
+
+<a href="#" class="social">Facebook</a>
+
+<a href="#" class="social">Pinterest</a>
+```
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    Find Us
+  </h2>
+
+  <div class="map">
+
+```
+<iframe
+  src="https://maps.google.com/maps?q=Temuco&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+```
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <h2>
+    Ready For Your Next Adventure?
+  </h2>
+
+  <p>
+    Discover hidden destinations, immersive experiences and unforgettable moments with Orumi Journeys.
+  </p>
+
+<a
+href="book-now.html"
+class="cta-btn"
+
+>
+
+```
+Start Planning
+```
+
+  </a>
+
+</section>
+
+<footer>
+
+  <p>
+    © 2026 Orumi Journeys · All Rights Reserved
+  </p>
+
+</footer>
+
+<a
+href="https://wa.me/"
+target="_blank"
+class="whatsapp-float"
+
+>
+
+✦ </a>
+
+</body>
+</html>
