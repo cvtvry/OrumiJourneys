@@ -1,3 +1,1176 @@
+/* ================================================= /
+/ ===================== RESET ===================== /
+/ ================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing;
+}
+
+html{
+scroll-behavior;
+}
+
+body{
+font-family:'Nunito', sans-serif;
+background:#3E5364;
+overflow-x;
+color;
+}
+
+/* ================================================= /
+/ ===================== LOADER ==================== /
+/ ================================================= */
+
+.loader{
+position;
+inset:0;
+background:#3E5364;
+display;
+flex-direction;
+justify-content;
+align-items;
+z-index:9999;
+transition:1s;
+}
+
+.loader.hidden{
+opacity:0;
+visibility;
+}
+
+.flower{
+width:70px;
+height:70px;
+border:3px solid #B99763;
+border-top-color;
+border-radius:50%;
+animation 2s linear infinite;
+margin-bottom:20px;
+}
+
+@keyframes spin{
+to{
+transform(360deg);
+}
+}
+
+.loader p{
+font-family:'Cormorant Garamond', serif;
+color:#AAB8C2;
+font-size:1.4rem;
+letter-spacing:2px;
+}
+
+/* ================================================= /
+/ ===================== HEADER ==================== /
+/ ================================================= */
+
+.header{
+position;
+top:0;
+width:100%;
+display;
+justify-content;
+align-items;
+padding:20px 25px;
+z-index:1000;
+
+background:
+linear-gradient(
+to bottom,
+rgba(18,24,32,0.42),
+transparent
+);
+
+backdrop-filter(12px);
+}
+
+.logo{
+font-family:'Cormorant Garamond', serif;
+font-size:2.3rem;
+letter-spacing:2px;
+}
+
+/* ================================================= /
+/ ====================== MENU ===================== /
+/ ================================================= */
+
+.menu-toggle{
+width:35px;
+height:25px;
+display;
+flex-direction;
+justify-content;
+cursor;
+}
+
+.menu-toggle span{
+height:3px;
+background;
+border-radius:10px;
+}
+
+.menu{
+position;
+top:0;
+right:-100%;
+width:280px;
+height:100vh;
+
+background:
+rgba(18,24,32,0.96);
+
+backdrop-filter(20px);
+
+padding-top:120px;
+
+transition:.5s;
+
+z-index:999;
+}
+
+.menu.active{
+right:0;
+}
+
+.menu a{
+display;
+padding:20px 40px;
+color;
+text-decoration;
+transition:.3s;
+}
+
+.menu a{
+background(255,255,255,0.06);
+padding-left:55px;
+}
+
+/* ================================================= /
+/ ====================== HERO ===================== /
+/ ================================================= */
+
+.hero{
+height:100vh;
+
+display;
+justify-content;
+align-items;
+text-align;
+
+position;
+
+background:
+linear-gradient(
+rgba(18,24,32,0.42),
+rgba(18,24,32,0.58)
+),
+url('img/sunset-train.jpg');
+
+background-size;
+background-position;
+background-attachment;
+
+overflow;
+
+isolation;
+}
+
+/* ================================================= /
+/ ============ HERO CINEMATIC TRANSITION ========== /
+/ ================================================= */
+
+.hero::after{
+
+content:"";
+
+position;
+
+left:0;
+bottom:-1px;
+
+width:100%;
+height:260px;
+
+z-index:2;
+
+background:
+
+linear-gradient(
+  to bottom,
+  rgba(62,83,100,0) 0%,
+  rgba(62,83,100,0.15) 18%,
+  rgba(62,83,100,0.42) 42%,
+  rgba(62,83,100,0.78) 68%,
+  #3E5364 100%
+);
+pointer-events;
+}
+
+/* ================================================= /
+/ ======================= FOG ===================== /
+/ ================================================= */
+
+.fog{
+position;
+inset:0;
+
+background:
+radial-gradient(
+circle at 30% 60%,
+rgba(255,255,255,0.05),
+transparent 40%
+),
+
+radial-gradient(
+  circle at 80% 40%,
+  rgba(255,255,255,0.04),
+  transparent 40%
+);
+animation 20s linear infinite;
+}
+
+@keyframes fogMove{
+
+0%{
+transform(0);
+}
+
+50%{
+transform(-20px);
+}
+
+100%{
+transform(0);
+}
+}
+
+/* ================================================= /
+/ ====================== GLOW ===================== /
+/ ================================================= */
+
+.glow{
+position;
+inset:0;
+
+background:
+radial-gradient(
+circle at 50% 70%,
+rgba(170,184,194,0.10),
+transparent 45%
+);
+
+pointer-events;
+}
+
+/* ================================================= /
+/ ================== HERO CONTENT ================= /
+/ ================================================= */
+
+.hero-content{
+position;
+z-index:3;
+
+max-width:800px;
+
+padding:20px;
+
+margin-top:-40px;
+
+animation 2s ease;
+}
+
+.slogan{
+font-family:'Cormorant Garamond', serif;
+font-size:2rem;
+margin-bottom:20px;
+color:#D7E1E8;
+}
+
+.hero h1{
+font-size:3.5rem;
+font-weight:300;
+line-height:1.2;
+margin-bottom:35px;
+}
+
+/* ================================================= /
+/ ===================== BUTTON ==================== /
+/ ================================================= */
+
+.btn{
+padding:16px 40px;
+border;
+border-radius:50px;
+background:#B99763;
+color;
+cursor;
+transition:.4s;
+
+box-shadow:
+0 15px 30px rgba(18,24,32,0.28);
+
+font-size:1rem;
+}
+
+.btn{
+transform(-6px);
+background:#CFAE72;
+}
+
+/* ================================================= /
+/ ==================== PARTICLES ================== /
+/ ================================================= */
+
+.particles span,
+.leaves span{
+position;
+bottom:-20px;
+border-radius:50%;
+animation linear infinite;
+}
+
+.particles span{
+width:6px;
+height:6px;
+background(255,255,255,0.25);
+}
+
+@keyframes float{
+
+from{
+transform(0);
+opacity:0;
+}
+
+to{
+transform(-120vh);
+opacity:1;
+}
+}
+
+/* ================================================= /
+/ ===================== LEAVES ==================== /
+/ ================================================= */
+
+.leaves span{
+top:-10%;
+width:18px;
+height:18px;
+
+background:
+radial-gradient(
+circle,
+#748592,
+#5E6C79
+);
+
+border-radius:60% 40% 70% 30%;
+
+opacity:.35;
+
+animation linear infinite;
+}
+
+@keyframes leafFall{
+
+from{
+transform:
+translateY(-10vh)
+rotate(0deg);
+
+opacity:0;
+}
+
+to{
+transform:
+translateY(120vh)
+rotate(360deg);
+
+opacity:.35;
+}
+}
+
+/* ================================================= /
+/ ====================== FADE ===================== /
+/ ================================================= */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform(30px);
+}
+
+to{
+opacity:1;
+transform(0);
+}
+}
+
+/* ================================================= /
+/ ================= DESTINATIONS ================== /
+/ ================================================= */
+
+.destinations{
+
+position;
+
+padding:
+220px 7%
+160px;
+
+overflow;
+
+isolation;
+
+background:
+
+radial-gradient(
+  circle at 20% 10%,
+  rgba(170,184,194,0.12),
+  transparent 24%
+),
+
+radial-gradient(
+  circle at 80% 30%,
+  rgba(111,129,145,0.14),
+  transparent 28%
+),
+
+radial-gradient(
+  circle at 50% 100%,
+  rgba(255,255,255,0.04),
+  transparent 40%
+),
+
+linear-gradient(
+  180deg,
+  #566D7F 0%,
+  #4F6678 18%,
+  #465B6B 42%,
+  #3E5364 68%,
+  #2E3D49 100%
+);
+}
+
+/* ================================================= /
+/ ================= WASHI TEXTURE ================= /
+/ ================================================= */
+
+.destinations::before{
+
+content:"";
+
+position;
+
+inset:0;
+
+z-index:0;
+
+background:
+
+repeating-radial-gradient(
+  circle at 20% 30%,
+  rgba(255,255,255,0.018) 0px,
+  rgba(255,255,255,0.018) 1px,
+  transparent 2px,
+  transparent 9px
+),
+
+repeating-linear-gradient(
+  90deg,
+  rgba(255,255,255,0.01) 0px,
+  rgba(255,255,255,0.01) 1px,
+  transparent 2px,
+  transparent 5px
+),
+
+repeating-linear-gradient(
+  0deg,
+  rgba(0,0,0,0.015) 0px,
+  rgba(0,0,0,0.015) 1px,
+  transparent 3px,
+  transparent 7px
+),
+
+url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+opacity:.42;
+
+mix-blend-mode;
+
+pointer-events;
+}
+
+/* ================================================= /
+/ ================= ATMOSPHERIC INK =============== /
+/ ================================================= */
+
+.destinations::after{
+
+content:"";
+
+position;
+
+inset:-20%;
+
+z-index:0;
+
+background:
+
+radial-gradient(
+  circle at 12% 20%,
+  rgba(111,129,145,0.24),
+  transparent 26%
+),
+
+radial-gradient(
+  circle at 82% 72%,
+  rgba(170,184,194,0.14),
+  transparent 32%
+),
+
+radial-gradient(
+  circle at 50% 40%,
+  rgba(62,83,100,0.28),
+  transparent 52%
+),
+
+radial-gradient(
+  circle at 72% 18%,
+  rgba(207,174,114,0.10),
+  transparent 12%
+),
+
+radial-gradient(
+  circle at 22% 78%,
+  rgba(185,151,99,0.08),
+  transparent 16%
+);
+filter(100px);
+
+opacity:1;
+
+animation:
+atmosphereMove 30s ease-in-out infinite alternate;
+
+pointer-events;
+}
+
+@keyframes atmosphereMove{
+
+from{
+transform:
+translateY(0px)
+translateX(0px)
+scale(1);
+}
+
+to{
+transform:
+translateY(-10px)
+translateX(6px)
+scale(1.03);
+}
+}
+
+/* ================================================= /
+/ ================= FILM GRAIN ==================== /
+/ ================================================= */
+
+.film-grain{
+
+position;
+
+inset:0;
+
+z-index:1;
+
+opacity:.06;
+
+mix-blend-mode;
+
+background-image:
+url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+pointer-events;
+
+animation:
+grainMove .25s steps(2) infinite;
+}
+
+@keyframes grainMove{
+
+0%{
+transform(0,0);
+}
+
+25%{
+transform(-1px,1px);
+}
+
+50%{
+transform(1px,-1px);
+}
+
+75%{
+transform(1px,1px);
+}
+
+100%{
+transform(0,0);
+}
+}
+
+/* ================================================= /
+/ ================= AMBIENT FOG =================== /
+/ ================================================= */
+
+.ambient-fog{
+
+position;
+
+inset:0;
+
+z-index:1;
+
+background:
+
+radial-gradient(
+  circle at 25% 25%,
+  rgba(255,255,255,0.04),
+  transparent 30%
+),
+
+radial-gradient(
+  circle at 80% 60%,
+  rgba(255,255,255,0.025),
+  transparent 38%
+);
+filter(40px);
+
+animation:
+fogMoveAmbient 20s ease-in-out infinite alternate;
+
+pointer-events;
+}
+
+@keyframes fogMoveAmbient{
+
+from{
+transform(0px);
+}
+
+to{
+transform(-12px);
+}
+}
+
+/* ================================================= /
+/ ================= GOLD PARTICLES ================ /
+/ ================================================= */
+
+.gold-particles{
+
+position;
+
+inset:0;
+
+z-index:1;
+
+overflow;
+
+pointer-events;
+}
+
+.gold-particles span{
+
+position;
+
+width:2px;
+height:2px;
+
+border-radius:50%;
+
+background:#CFAE72;
+
+box-shadow:
+0 0 8px rgba(207,174,114,0.25);
+
+opacity:.6;
+
+animation:
+particleFloat linear infinite;
+}
+
+.gold-particles span(1){
+top:12%;
+left:18%;
+animation-duration:18s;
+}
+
+.gold-particles span(2){
+top:24%;
+left:72%;
+animation-duration:22s;
+}
+
+.gold-particles span(3){
+top:68%;
+left:30%;
+animation-duration:20s;
+}
+
+.gold-particles span(4){
+top:82%;
+left:84%;
+animation-duration:26s;
+}
+
+.gold-particles span(5){
+top:46%;
+left:58%;
+animation-duration:24s;
+}
+
+.gold-particles span(6){
+top:16%;
+left:52%;
+animation-duration:19s;
+}
+
+@keyframes particleFloat{
+
+from{
+transform:
+translateY(0px)
+scale(1);
+
+opacity:.2;
+}
+
+50%{
+opacity:.7;
+}
+
+to{
+transform:
+translateY(-12px)
+scale(1.25);
+
+opacity:.18;
+}
+}
+
+/* ================================================= /
+/ ====================== INTRO ==================== /
+/ ================================================= */
+
+.section-intro{
+
+position;
+z-index:2;
+
+max-width:900px;
+
+margin;
+
+text-align;
+
+margin-bottom:110px;
+}
+
+.section-mini{
+color:#CFAE72;
+letter-spacing:4px;
+text-transform;
+font-size:.85rem;
+margin-bottom:20px;
+}
+
+.section-title{
+
+font-family:'Cormorant Garamond', serif;
+
+font-size:5.2rem;
+
+line-height:1;
+
+color:#F3F6F8;
+
+margin-bottom:34px;
+
+text-shadow:
+0 10px 35px rgba(0,0,0,0.22);
+}
+
+.section-text{
+color:#D5DDE3;
+line-height:1.9;
+font-size:1.08rem;
+}
+
+/* ================================================= /
+/ ======================= GRID ==================== /
+/ ================================================= */
+
+.destination-grid{
+
+display;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
+
+position;
+z-index:2;
+}
+
+/* ================================================= /
+/ ======================= CARD ==================== /
+/ ================================================= */
+
+.destination-card{
+
+position;
+
+overflow;
+
+border-radius:36px;
+
+min-height:460px;
+
+display;
+
+text-decoration;
+
+background:
+rgba(255,255,255,0.02);
+
+border:
+1px solid rgba(207,174,114,0.24);
+
+box-shadow:
+
+0 0 0 1px rgba(140,60,50,0.16),
+
+0 18px 50px rgba(18,24,32,0.42),
+
+inset 0 0 0 1px rgba(255,255,255,0.04);
+transition:
+transform .8s ease,
+box-shadow .8s ease,
+border .8s ease;
+
+isolation;
+
+backdrop-filter(2px);
+}
+
+.destination-card{
+
+transform:
+translateY(-14px)
+scale(1.02);
+
+border:
+1px solid rgba(207,174,114,0.46);
+
+box-shadow:
+
+0 0 0 1px rgba(160,70,60,0.22),
+
+0 35px 80px rgba(18,24,32,0.56),
+
+0 0 35px rgba(185,151,99,0.14);
+}
+
+/* ================================================= /
+/ ================= ASIAN FRAME =================== /
+/ ================================================= */
+
+.destination-card::before{
+
+content:"";
+
+position;
+
+inset:12px;
+
+border-radius:28px;
+
+border:
+1px solid rgba(207,174,114,0.24);
+
+z-index:5;
+
+pointer-events;
+
+box-shadow:
+inset 0 0 25px rgba(185,151,99,0.04);
+}
+
+.destination-card::after{
+
+content:"";
+
+position;
+
+inset:0;
+
+background:
+
+linear-gradient(
+  135deg,
+  rgba(120,30,20,0.08),
+  transparent 28%,
+  transparent 70%,
+  rgba(120,30,20,0.05)
+);
+z-index:1;
+
+pointer-events;
+
+mix-blend-mode;
+}
+
+/* ================================================= /
+/ ======================= IMAGE =================== /
+/ ================================================= */
+
+.destination-image{
+position;
+inset:0;
+}
+
+.destination-image::after{
+
+content:"";
+
+position;
+
+inset:0;
+
+background:
+
+/* ================= TOP ATMOSPHERE ================= */
+
+linear-gradient(
+  to bottom,
+  rgba(18,24,32,0.08),
+  transparent 22%
+),
+
+/* ================= CENTER SOFT FOG ================= */
+
+radial-gradient(
+  circle at 50% 75%,
+  rgba(18,24,32,0.18),
+  transparent 45%
+),
+
+/* ================= MAIN CINEMATIC SHADOW ================= */
+
+linear-gradient(
+  to top,
+  rgba(10,14,18,0.92) 0%,
+  rgba(18,24,32,0.76) 28%,
+  rgba(18,24,32,0.22) 58%,
+  transparent 78%
+);
+}
+.destination-image img{
+width:100%;
+height:100%;
+object-fit;
+transition:1.3s;
+}
+
+.destination-card img{
+transform(1.08);
+}
+
+/* ================================================= /
+/ ====================== CONTENT ================== /
+/ ================================================= */
+
+.destination-content{
+
+position;
+
+left:24px;
+right:24px;
+bottom:24px;
+
+padding:26px;
+
+border-radius:26px;
+
+z-index:4;
+
+background:
+
+linear-gradient(
+  to bottom,
+  rgba(18,24,32,0.20),
+  rgba(10,14,18,0.45)
+);
+backdrop-filter(14px);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,0.22),
+
+inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+/* ================================================= /
+/ ================= TEXT BACKDROP ================= /
+/ ================================================= */
+
+.destination-content::before{
+
+content:"";
+
+position;
+
+left:-10%;
+bottom:-20px;
+
+width:120%;
+height:220px;
+
+background:
+
+radial-gradient(
+  ellipse at center,
+  rgba(10,14,18,0.55),
+  transparent 72%
+);
+filter(24px);
+
+z-index:-1;
+
+pointer-events;
+}
+
+.destination-content h3{
+
+font-family:'Cormorant Garamond', serif;
+
+font-size:2.6rem;
+
+line-height:1.05;
+
+margin-bottom:14px;
+
+color;
+
+text-shadow:
+
+0 6px 18px rgba(0,0,0,0.55);
+}
+
+.destination-content p{
+
+color(255,255,255,0.92);
+
+line-height:1.7;
+
+margin-bottom:24px;
+
+text-shadow:
+0 4px 12px rgba(0,0,0,0.45);
+}
+
+/* ================================================= /
+/ ====================== BUTTON =================== /
+/ ================================================= */
+
+.destination-btn{
+
+display;
+
+align-items;
+
+gap:10px;
+
+padding:
+14px 24px;
+
+border-radius:50px;
+
+background:
+rgba(255,255,255,0.10);
+
+backdrop-filter(10px);
+
+color;
+
+transition:.4s;
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+width;
+}
+
+.destination-btn{
+background:
+rgba(255,255,255,0.18);
+
+transform(5px);
+}
+
+/* ================================================= /
+/ ==================== RESPONSIVE ================= /
+/ ================================================= */
+
+@media(max-width:768px){
+
+.hero{
+background-attachment;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.slogan{
+font-size:1.4rem;
+}
+
+.logo{
+font-size:1.8rem;
+}
+
+.menu{
+width:100%;
+}
+
+.destinations{
+padding:
+170px 6%
+120px;
+}
+
+.section-title{
+font-size:3.4rem;
+}
+
+.destination-card{
+min-height:360px;
+}
+
+}
+
+
 /* ================================================= */
 /* ================= PROMOTIONS ==================== */
 /* ================================================= */
