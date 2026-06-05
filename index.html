@@ -3,1132 +3,285 @@
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<title>
-Orumi Journeys | Viajes que inspiran
-</title>
+  <title>
+    Orumi Journeys | Slow journeys, lasting memories
+  </title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- ================= FUENTES ================= -->
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-<style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+  <!-- ================= CSS ================= -->
 
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#050d18;
-font-family:'Inter',sans-serif;
-color:white;
-overflow-x:hidden;
-}
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-img{
-display:block;
-max-width:100%;
-}
-
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-}
-
-/* ================= NAVBAR ================= */
-
-.header{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-
-z-index:1000;
-
-background:rgba(4,10,18,.35);
-backdrop-filter:blur(12px);
-
-border-bottom:
-1px solid rgba(255,255,255,.08);
-
-}
-
-.navbar{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:20px 0;
-
-}
-
-.logo{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:2rem;
-font-weight:600;
-
-}
-
-.menu{
-
-display:flex;
-gap:35px;
-
-}
-
-.menu a{
-
-transition:.3s;
-opacity:.85;
-
-}
-
-.menu a:hover{
-
-opacity:1;
-color:#d6b179;
-
-}
-
-.reserve-btn{
-
-background:#071727;
-
-padding:14px 28px;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.reserve-btn:hover{
-
-background:#10263d;
-
-}
-
-/* ================= HERO ================= */
-
-.hero{
-
-height:100vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.55)
-),
-
-url("img/hero-japan.jpg");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-
-}
-
-.hero-content{
-
-max-width:650px;
-
-}
-
-.hero-mini{
-
-color:#d6b179;
-
-letter-spacing:4px;
-
-text-transform:uppercase;
-
-margin-bottom:20px;
-
-font-size:.9rem;
-
-}
-
-.hero h1{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:
-clamp(3rem,7vw,5.8rem);
-
-line-height:1;
-
-margin-bottom:25px;
-
-}
-
-.hero-line{
-
-width:70px;
-height:2px;
-
-background:#d6b179;
-
-margin-bottom:30px;
-
-}
-
-.hero p{
-
-font-size:1.1rem;
-
-line-height:1.8;
-
-opacity:.9;
-
-margin-bottom:35px;
-
-}
-
-.hero-btn{
-
-display:inline-block;
-
-padding:18px 35px;
-
-background:white;
-
-color:black;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.hero-btn:hover{
-
-transform:translateY(-4px);
-
-}
-
-/* ================= SECTIONS ================= */
-
-.section{
-
-padding:120px 0;
-
-}
-
-.section-mini{
-
-text-transform:uppercase;
-
-letter-spacing:4px;
-
-color:#d6b179;
-
-margin-bottom:15px;
-
-text-align:center;
-
-}
-
-.section-title{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:3.5rem;
-
-text-align:center;
-
-margin-bottom:20px;
-
-}
-
-.section-text{
-
-max-width:750px;
-
-margin:auto;
-
-text-align:center;
-
-line-height:1.8;
-
-opacity:.85;
-
-}
-
-</style>
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- ================================================= -->
+  <!-- ===================== LOADER ==================== -->
+  <!-- ================================================= -->
 
-<header class="header">
+  <div class="loader" id="loader">
 
-<div class="container navbar">
+    <div class="flower"></div>
 
-<a href="index.html" class="logo">
-Orumi Journeys
-</a>
+    <p>Entering Orumi...</p>
 
-<nav class="menu">
+  </div>
 
-<a href="index.html">
-Inicio
-</a>
+  <!-- ================================================= -->
+  <!-- ===================== HEADER ==================== -->
+  <!-- ================================================= -->
 
-<a href="destinations.html">
-Destinos
-</a>
+  <header class="header">
 
-<a href="book-now.html">
-Reserva
-</a>
+    <div class="logo">
+      Orumi Journeys
+    </div>
 
-<a href="about-us.html">
-Sobre Nosotros
-</a>
+    <div class="menu-toggle" id="toggle">
 
-<a href="contact-us.html">
-Contacto
-</a>
+      <span></span>
+      <span></span>
+      <span></span>
 
-</nav>
+    </div>
 
-<a
-href="book-now.html"
-class="reserve-btn"
->
-Reserva Ahora
-</a>
+    <!-- ================= MENU ================= -->
 
-</div>
+    <nav class="menu" id="menu">
 
-</header>
+      <a href="index.html">Inicio</a>
 
-<!-- ================= HERO ================= -->
+      <a href="destinations.html">Destinos</a>
 
-<section class="hero">
+      <a href="book-now.html">Reserva</a>
 
-<div class="container">
+      <a href="about-us.html">Sobre Nosotros</a>
 
-<div class="hero-content">
+      <a href="contact-us.html">Contacto</a>
 
-<p class="hero-mini">
-Viajes Cinematográficos
-</p>
+    </nav>
 
-<h1>
-Descubre destinos
-que parecen
-salidos de un sueño
-</h1>
+  </header>
 
-<div class="hero-line"></div>
+  <!-- ================================================= -->
+  <!-- ====================== HERO ===================== -->
+  <!-- ================================================= -->
 
-<p>
+  <section class="hero">
 
-Explora Japón, Corea del Sur,
-Taiwán y otros rincones fascinantes
-a través de experiencias auténticas,
-diseñadas para viajeros que buscan
-algo más que un simple viaje.
+    <div class="fog"></div>
 
-</p>
+    <div class="glow"></div>
 
-<a
-href="book-now.html"
-class="hero-btn"
->
-Reservar Ahora
-</a>
+    <div class="particles" id="particles"></div>
 
-</div>
+    <div class="leaves" id="leaves"></div>
 
-</div>
+    <!-- ================= CONTENT ================= -->
 
-</section>
-<!-- ================= DESTINOS ================= -->
+    <div class="hero-content">
 
-<section class="section">
+      <p class="slogan">
+        Slow journeys, lasting memories
+      </p>
 
-<div class="container">
+      <h1>
+        Viajes tranquilos inspirados
+        <br>
+        en mundos mágicos
+      </h1>
 
-<p class="section-mini">
-Destinos Destacados
-</p>
+      <button class="btn">
+        Reservar Ahora
+      </button>
 
-<h2 class="section-title">
-Lugares que parecen
-salidos de una película
-</h2>
+    </div>
 
-<p class="section-text">
+  </section>
 
-Cada destino ha sido seleccionado por su
-atmósfera única, belleza natural y riqueza
-cultural para ofrecer experiencias memorables.
+  <!-- ================================================= -->
+  <!-- ================= DESTINATIONS ================== -->
+  <!-- ================================================= -->
 
-</p>
+  <section class="destinations">
 
-<div class="destination-grid">
+  <!-- ================= ATMOSPHERE ================= -->
 
-<div class="destination-card">
+  <div class="film-grain"></div>
 
-<img
-src="img/yakushima.jpg"
-alt="Yakushima"
->
+  <div class="ambient-fog"></div>
 
-<div class="destination-content">
+  <div class="gold-particles">
 
-<h3>
-Yakushima
-</h3>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 
-<p>
+  </div>
 
-Bosques milenarios, senderos cubiertos
-de musgo y paisajes que inspiraron
-historias inolvidables.
+    <!-- ================= INTRO ================= -->
 
-</p>
+    <div class="section-intro">
 
-<a
-href="destinations.html"
-class="card-btn"
->
-Explorar →
-</a>
+      <p class="section-mini">
+        Cinematic Destinations
+      </p>
 
-</div>
+      <h2 class="section-title">
+        Lugares que parecen
+        <br>
+        salidos de un sueño
+      </h2>
 
-</div>
+      <p class="section-text">
 
-<div class="destination-card">
+        Cada destino fue elegido por su atmósfera,
+        belleza contemplativa y energía emocional,
+        inspiradas en el universo cinematográfico
+        de Studio Ghibli.
 
-<img
-src="img/ginzan.jpg"
-alt="Ginzan Onsen"
->
+      </p>
 
-<div class="destination-content">
+    </div>
 
-<h3>
-Ginzan Onsen
-</h3>
+    <!-- ================= GRID ================= -->
 
-<p>
+    <div class="destination-grid">
 
-Un pueblo japonés tradicional iluminado
-por faroles que parece detenido en el tiempo.
+      <!-- ================= YAKUSHIMA ================= -->
 
-</p>
+      <a
+        href="yakushima.html"
+        class="destination-card"
+      >
 
-<a
-href="destinations.html"
-class="card-btn"
->
-Explorar →
-</a>
+        <div class="destination-image">
 
-</div>
+          <img
+            src="img/yakushima.jpg"
+            alt="Yakushima"
+          >
 
-</div>
+        </div>
 
-<div class="destination-card">
+        <div class="destination-content">
 
-<img
-src="img/jeju.jpg"
-alt="Jeju"
->
+          <h3>Yakushima</h3>
 
-<div class="destination-content">
+          <p>
+            Bosques ancestrales cubiertos de niebla
+            y naturaleza viva inspiraron mundos mágicos.
+          </p>
 
-<h3>
-Isla de Jeju
-</h3>
+          <div class="destination-btn">
+            Explorar destino →
+          </div>
 
-<p>
+        </div>
 
-Acantilados volcánicos, paisajes costeros
-y una tranquilidad difícil de encontrar.
+      </a>
 
-</p>
+      <!-- ================= GINZAN ================= -->
 
-<a
-href="destinations.html"
-class="card-btn"
->
-Explorar →
-</a>
+      <a
+        href="ginzan.html"
+        class="destination-card"
+      >
 
-</div>
+        <div class="destination-image">
 
-</div>
+          <img
+            src="img/ginzan.jpg"
+            alt="Ginzan Onsen"
+          >
 
-</div>
+        </div>
 
-</div>
+        <div class="destination-content">
 
-</section>
+          <h3>Ginzan Onsen</h3>
 
-<!-- ================= PROMOCIONES ================= -->
+          <p>
+            Faroles cálidos y arquitectura japonesa
+            en un pueblo detenido en el tiempo.
+          </p>
 
-<section class="promotions">
+          <div class="destination-btn">
+            Descubrir experiencia →
+          </div>
 
-<div class="container">
+        </div>
 
-<p class="section-mini">
-Ofertas Especiales
-</p>
+      </a>
 
-<h2 class="section-title">
-Promociones por Tiempo Limitado
-</h2>
+      <!-- ================= JEJU ================= -->
 
-<div class="promo-grid">
+      <a
+        href="jeju.html"
+        class="destination-card"
+      >
 
-<div class="promo-card">
+        <div class="destination-image">
 
-<span class="promo-badge">
--20%
-</span>
+          <img
+            src="img/jeju.jpg"
+            alt="Jeju Island"
+          >
 
-<h3>
-Japón Clásico
-</h3>
+        </div>
 
-<p>
+        <div class="destination-content">
 
-Reserva antes de fin de mes y obtén
-un descuento exclusivo en circuitos
-por Tokio, Kioto y Osaka.
+          <h3>Jeju Island</h3>
 
-</p>
+          <p>
+            Costas infinitas, viento suave
+            y paisajes contemplativos.
+          </p>
 
-<a
-href="book-now.html"
-class="promo-btn"
->
-Reservar Ahora
-</a>
+          <div class="destination-btn">
+            Ver aventura →
+          </div>
 
-</div>
+        </div>
 
-<div class="promo-card">
+      </a>
 
-<span class="promo-badge">
-Oferta Exclusiva
-</span>
+    </div>
 
-<h3>
-Corea del Sur
-</h3>
+  </section>
 
-<p>
+  <!-- ================================================= -->
+  <!-- ================= JAVASCRIPT ==================== -->
+  <!-- ================================================= -->
 
-Incluye alojamiento, traslados y
-experiencias culturales seleccionadas.
-
-</p>
-
-<a
-href="book-now.html"
-class="promo-btn"
->
-Reservar Ahora
-</a>
-
-</div>
-
-<div class="promo-card">
-
-<span class="promo-badge">
-Mejor Precio
-</span>
-
-<h3>
-Taiwán & Jiufen
-</h3>
-
-<p>
-
-Descubre calles iluminadas por faroles
-y paisajes inspirados en el cine asiático.
-
-</p>
-
-<a
-href="book-now.html"
-class="promo-btn"
->
-Reservar Ahora
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= BENEFICIOS ================= -->
-
-<section class="section">
-
-<div class="container">
-
-<p class="section-mini">
-¿Por qué elegirnos?
-</p>
-
-<h2 class="section-title">
-Experiencias diseñadas para ti
-</h2>
-
-<div class="benefits-grid">
-
-<div class="benefit-card">
-
-<h3>
-Atención Personalizada
-</h3>
-
-<p>
-Te acompañamos desde la planificación
-hasta tu regreso.
-</p>
-
-</div>
-
-<div class="benefit-card">
-
-<h3>
-Destinos Únicos
-</h3>
-
-<p>
-Seleccionamos lugares auténticos
-y poco convencionales.
-</p>
-
-</div>
-
-<div class="benefit-card">
-
-<h3>
-Reserva Segura
-</h3>
-
-<p>
-Procesos claros y asistencia
-durante todo tu viaje.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-<div class="container">
-
-<h2>
-¿Listo para tu próxima aventura?
-</h2>
-
-<p>
-
-Déjanos ayudarte a crear recuerdos
-inolvidables en algunos de los lugares
-más fascinantes del mundo.
-
-</p>
-
-<a
-href="book-now.html"
-class="hero-btn"
->
-Reservar Ahora
-</a>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-<div class="container footer-grid">
-
-<div>
-
-<h3>
-Orumi Journeys
-</h3>
-
-<p>
-
-Viajes auténticos, experiencias
-que inspiran y recuerdos que perduran.
-
-</p>
-
-</div>
-
-<div>
-
-<h4>
-Enlaces
-</h4>
-
-<ul>
-
-<li><a href="index.html">Inicio</a></li>
-
-<li><a href="destinations.html">Destinos</a></li>
-
-<li><a href="book-now.html">Reserva</a></li>
-
-<li><a href="about-us.html">Sobre Nosotros</a></li>
-
-<li><a href="contact-us.html">Contacto</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4>
-Destinos Populares
-</h4>
-
-<ul>
-
-<li>Japón</li>
-<li>Corea del Sur</li>
-<li>Taiwán</li>
-<li>Vietnam</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-© 2026 Orumi Journeys.
-Todos los derechos reservados.
-
-</div>
-
-</footer>
-
-<style>
-
-/* ================= DESTINOS ================= */
-
-.destination-grid{
-
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
-
-gap:30px;
-
-margin-top:70px;
-
-}
-
-.destination-card{
-
-background:
-rgba(255,255,255,.04);
-
-border:
-1px solid rgba(255,255,255,.08);
-
-border-radius:24px;
-
-overflow:hidden;
-
-transition:.4s;
-
-}
-
-.destination-card:hover{
-
-transform:
-translateY(-8px);
-
-}
-
-.destination-card img{
-
-height:260px;
-width:100%;
-
-object-fit:cover;
-
-}
-
-.destination-content{
-
-padding:25px;
-
-}
-
-.destination-content h3{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:2rem;
-
-margin-bottom:15px;
-
-}
-
-.destination-content p{
-
-line-height:1.8;
-
-opacity:.85;
-
-margin-bottom:20px;
-
-}
-
-.card-btn{
-
-color:#d6b179;
-font-weight:600;
-
-}
-
-/* ================= PROMOS ================= */
-
-.promotions{
-
-padding:120px 0;
-
-background:
-linear-gradient(
-180deg,
-#07111d,
-#0c1624
-);
-
-}
-
-.promo-grid{
-
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
-
-margin-top:70px;
-
-}
-
-.promo-card{
-
-background:
-rgba(255,255,255,.04);
-
-padding:35px;
-
-border-radius:24px;
-
-border:
-1px solid rgba(255,255,255,.08);
-
-}
-
-.promo-badge{
-
-display:inline-block;
-
-padding:8px 15px;
-
-background:#d6b179;
-
-color:black;
-
-border-radius:999px;
-
-font-size:.8rem;
-
-font-weight:700;
-
-margin-bottom:20px;
-
-}
-
-.promo-card h3{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:2rem;
-
-margin-bottom:15px;
-
-}
-
-.promo-card p{
-
-line-height:1.8;
-
-margin-bottom:25px;
-
-}
-
-.promo-btn{
-
-display:inline-block;
-
-padding:14px 25px;
-
-background:white;
-
-color:black;
-
-border-radius:50px;
-
-font-weight:600;
-
-}
-
-/* ================= BENEFITS ================= */
-
-.benefits-grid{
-
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
-
-margin-top:70px;
-
-}
-
-.benefit-card{
-
-background:
-rgba(255,255,255,.04);
-
-padding:35px;
-
-border-radius:24px;
-
-border:
-1px solid rgba(255,255,255,.08);
-
-}
-
-.benefit-card h3{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:2rem;
-
-margin-bottom:15px;
-
-}
-
-/* ================= CTA ================= */
-
-.cta{
-
-padding:120px 0;
-
-text-align:center;
-
-background:
-linear-gradient(
-rgba(0,0,0,.6),
-rgba(0,0,0,.6)
-),
-
-url("img/cta.jpg");
-
-background-size:cover;
-background-position:center;
-
-}
-
-.cta h2{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:4rem;
-
-margin-bottom:20px;
-
-}
-
-.cta p{
-
-max-width:700px;
-
-margin:auto;
-
-line-height:1.8;
-
-margin-bottom:35px;
-
-}
-
-/* ================= FOOTER ================= */
-
-.footer{
-
-padding:80px 0 20px;
-
-background:#040a12;
-
-}
-
-.footer-grid{
-
-display:grid;
-
-grid-template-columns:
-2fr 1fr 1fr;
-
-gap:50px;
-
-}
-
-.footer h3{
-
-font-family:
-'Cormorant Garamond',
-serif;
-
-font-size:2rem;
-
-margin-bottom:20px;
-
-}
-
-.footer h4{
-
-margin-bottom:20px;
-
-}
-
-.footer ul{
-
-list-style:none;
-
-}
-
-.footer li{
-
-margin-bottom:10px;
-
-}
-
-.footer-bottom{
-
-text-align:center;
-
-margin-top:50px;
-
-padding-top:20px;
-
-border-top:
-1px solid rgba(255,255,255,.08);
-
-opacity:.7;
-
-}
-
-@media(max-width:900px){
-
-.menu{
-display:none;
-}
-
-.hero h1{
-font-size:3rem;
-}
-
-.section-title{
-font-size:2.5rem;
-}
-
-.cta h2{
-font-size:2.5rem;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
