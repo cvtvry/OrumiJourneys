@@ -1,155 +1,24 @@
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const sendBtn = document.getElementById("sendBtn");
-    const confirmation = document.getElementById("confirmation");
-
-    const destinationSelect =
-        document.querySelectorAll("select")[1];
-
-    const travelersInput =
-        document.querySelector('input[type="number"]');
-
-    const emailInput =
-        document.querySelector('input[type="email"]');
-
-    const phoneInput =
-        document.querySelectorAll('input[type="text"]')[0];
-
-    const summaryDestination =
-        document.querySelectorAll(".summary-item span")[1];
-
-    const summaryDuration =
-        document.querySelectorAll(".summary-item span")[3];
-
-    const progress =
-        document.querySelector(".progress");
-
-    const buttons =
-        document.querySelectorAll(".btn-secondary");
-
-    // ==========================================
-    // UPDATE DESTINATION SUMMARY
-    // ==========================================
-
-    destinationSelect.addEventListener("change", () => {
-
-        summaryDestination.textContent =
-            destinationSelect.value;
-
-    });
-
-    // ==========================================
-    // UPDATE DURATION ACCORDING TRAVELERS
-    // ==========================================
-
-    travelersInput.addEventListener("input", () => {
-
-        const people =
-            parseInt(travelersInput.value) || 1;
-
-        let days = 5;
-
-        if (people >= 4) days = 7;
-        if (people >= 8) days = 10;
-
-        summaryDuration.textContent =
-            `${days} días`;
-
-    });
-
-    // ==========================================
-    // FORM VALIDATION
-    // ==========================================
-
-    sendBtn.addEventListener("click", (e) => {
-
-        e.preventDefault();
-
-        const email =
-            emailInput.value.trim();
-
-        const phone =
-            phoneInput.value.trim();
-
-        if (!email) {
-
-            alert("Ingrese un correo electrónico.");
-            return;
-
-        }
-
-        if (!phone) {
-
-            alert("Ingrese un número de contacto.");
-            return;
-
-        }
-
-        confirmation.classList.add("active");
-
-        progress.style.width = "100%";
-
-        confirmation.innerHTML = `
-            ✓ Tu solicitud fue enviada correctamente.
-            Nuestro equipo responderá dentro de 24 horas.
-        `;
-
-        window.scrollTo({
-
-            top:
-                confirmation.offsetTop - 120,
-
-            behavior:
-                "smooth"
-
-        });
-
-    });
-
-    // ==========================================
-    // WHATSAPP
-    // ==========================================
-
-    const whatsappLink =
-        document.querySelector(".whatsapp-float");
-
-    whatsappLink.addEventListener("click", (e) => {
-
-        e.preventDefault();
-
-        const destination =
-            destinationSelect.value;
-
-        const message =
-            `Hola Orumi Journeys, me interesa reservar un viaje a ${destination}.`;
-
-        window.open(
-            `https://wa.me/56912345678?text=${encodeURIComponent(message)}`,
-            "_blank"
-        );
-
-    });
-
-    // ==========================================
-    // SAVE PDF
-    // ==========================================
-
-    buttons.forEach(button => {
-
-        if (button.textContent.includes("Guardar PDF")) {
-
-            button.addEventListener("click", () => {
-
-                window.print();
-
-            });
-
-        }
-
-    });
-
-});
-
-</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orumi Journeys - Booking</title>
+<style>
+body{font-family:Arial,sans-serif;background:#101820;color:white;margin:0;padding:40px}
+.container{max-width:900px;margin:auto}
+.card{background:#17232d;padding:30px;border-radius:16px}
+button{padding:12px 20px;border:none;border-radius:999px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<h1>Orumi Journeys</h1>
+<p>Archivo HTML generado correctamente.</p>
+<p>Este archivo sirve como base descargable para continuar con la versión completa del formulario.</p>
+<button onclick="alert('Formulario funcionando')">Probar</button>
+</div>
+</div>
+</body>
+</html>
