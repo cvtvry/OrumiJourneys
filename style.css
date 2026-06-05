@@ -1,1200 +1,1025 @@
-/* ================================================= /
-/ ===================== RESET ===================== /
-/ ================================================= */
+/* ================================================= */
+/* ===================== RESET ===================== */
+/* ================================================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
-scroll-behavior;
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:'Nunito', sans-serif;
-background:#3E5364;
-overflow-x;
-color;
+  font-family:'Nunito', sans-serif;
+  background:#3E5364;
+  overflow-x:hidden;
+  color:white;
 }
 
-/* ================================================= /
-/ ===================== LOADER ==================== /
-/ ================================================= */
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ================================================= */
+/* ===================== LOADER ==================== */
+/* ================================================= */
 
 .loader{
-position;
-inset:0;
-background:#3E5364;
-display;
-flex-direction;
-justify-content;
-align-items;
-z-index:9999;
-transition:1s;
+  position:fixed;
+  inset:0;
+  background:#3E5364;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  transition:1s;
 }
 
 .loader.hidden{
-opacity:0;
-visibility;
+  opacity:0;
+  visibility:hidden;
 }
 
 .flower{
-width:70px;
-height:70px;
-border:3px solid #B99763;
-border-top-color;
-border-radius:50%;
-animation 2s linear infinite;
-margin-bottom:20px;
+  width:70px;
+  height:70px;
+  border:3px solid #B99763;
+  border-top-color:transparent;
+  border-radius:50%;
+  animation:spin 2s linear infinite;
+  margin-bottom:20px;
 }
 
 @keyframes spin{
-to{
-transform(360deg);
-}
+  to{
+    transform:rotate(360deg);
+  }
 }
 
 .loader p{
-font-family:'Cormorant Garamond', serif;
-color:#AAB8C2;
-font-size:1.4rem;
-letter-spacing:2px;
+  font-family:'Cormorant Garamond', serif;
+  color:#AAB8C2;
+  font-size:1.4rem;
+  letter-spacing:2px;
 }
 
-/* ================================================= /
-/ ===================== HEADER ==================== /
-/ ================================================= */
+/* ================================================= */
+/* ===================== HEADER ==================== */
+/* ================================================= */
 
 .header{
-position;
-top:0;
-width:100%;
-display;
-justify-content;
-align-items;
-padding:20px 25px;
-z-index:1000;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
 
-background:
-linear-gradient(
-to bottom,
-rgba(18,24,32,0.42),
-transparent
-);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-backdrop-filter(12px);
+  padding:20px 25px;
+
+  z-index:1000;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18,24,32,0.42),
+      transparent
+    );
+
+  backdrop-filter:blur(12px);
 }
 
 .logo{
-font-family:'Cormorant Garamond', serif;
-font-size:2.3rem;
-letter-spacing:2px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:2.3rem;
+  letter-spacing:2px;
+  font-weight:600;
 }
 
-/* ================================================= /
-/ ====================== MENU ===================== /
-/ ================================================= */
+.logo a{
+  color:white;
+  transition:.3s;
+}
+
+.logo a:hover{
+  color:#CFAE72;
+}
+
+/* ================================================= */
+/* ====================== MENU ===================== */
+/* ================================================= */
 
 .menu-toggle{
-width:35px;
-height:25px;
-display;
-flex-direction;
-justify-content;
-cursor;
+
+  width:35px;
+  height:25px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  cursor:pointer;
 }
 
 .menu-toggle span{
-height:3px;
-background;
-border-radius:10px;
+
+  height:3px;
+
+  background:white;
+
+  border-radius:10px;
 }
 
 .menu{
-position;
-top:0;
-right:-100%;
-width:280px;
-height:100vh;
 
-background:
-rgba(18,24,32,0.96);
+  position:fixed;
 
-backdrop-filter(20px);
+  top:0;
+  right:-100%;
 
-padding-top:120px;
+  width:280px;
+  height:100vh;
 
-transition:.5s;
+  background:
+    rgba(18,24,32,0.96);
 
-z-index:999;
+  backdrop-filter:blur(20px);
+
+  padding-top:120px;
+
+  transition:.5s;
+
+  z-index:999;
 }
 
 .menu.active{
-right:0;
+  right:0;
 }
 
 .menu a{
-display;
-padding:20px 40px;
-color;
-text-decoration;
-transition:.3s;
-}
-
-.menu a{
-background(255,255,255,0.06);
-padding-left:55px;
-}
-
-/* ================================================= /
-/ ====================== HERO ===================== /
-/ ================================================= */
-
-.hero{
-height:100vh;
-
-display;
-justify-content;
-align-items;
-text-align;
-
-position;
-
-background:
-linear-gradient(
-rgba(18,24,32,0.42),
-rgba(18,24,32,0.58)
-),
-url('img/sunset-train.jpg');
-
-background-size;
-background-position;
-background-attachment;
-
-overflow;
-
-isolation;
-}
-
-/* ================================================= /
-/ ============ HERO CINEMATIC TRANSITION ========== /
-/ ================================================= */
-
-.hero::after{
-
-content:"";
-
-position;
-
-left:0;
-bottom:-1px;
-
-width:100%;
-height:260px;
-
-z-index:2;
-
-background:
-
-linear-gradient(
-  to bottom,
-  rgba(62,83,100,0) 0%,
-  rgba(62,83,100,0.15) 18%,
-  rgba(62,83,100,0.42) 42%,
-  rgba(62,83,100,0.78) 68%,
-  #3E5364 100%
-);
-pointer-events;
-}
-
-/* ================================================= /
-/ ======================= FOG ===================== /
-/ ================================================= */
-
-.fog{
-position;
-inset:0;
-
-background:
-radial-gradient(
-circle at 30% 60%,
-rgba(255,255,255,0.05),
-transparent 40%
-),
-
-radial-gradient(
-  circle at 80% 40%,
-  rgba(255,255,255,0.04),
-  transparent 40%
-);
-animation 20s linear infinite;
-}
-
-@keyframes fogMove{
-
-0%{
-transform(0);
-}
-
-50%{
-transform(-20px);
-}
-
-100%{
-transform(0);
-}
-}
-
-/* ================================================= /
-/ ====================== GLOW ===================== /
-/ ================================================= */
-
-.glow{
-position;
-inset:0;
-
-background:
-radial-gradient(
-circle at 50% 70%,
-rgba(170,184,194,0.10),
-transparent 45%
-);
-
-pointer-events;
-}
-
-/* ================================================= /
-/ ================== HERO CONTENT ================= /
-/ ================================================= */
-
-.hero-content{
-position;
-z-index:3;
-
-max-width:800px;
-
-padding:20px;
-
-margin-top:-40px;
-
-animation 2s ease;
-}
-
-.slogan{
-font-family:'Cormorant Garamond', serif;
-font-size:2rem;
-margin-bottom:20px;
-color:#D7E1E8;
-}
-
-.hero h1{
-font-size:3.5rem;
-font-weight:300;
-line-height:1.2;
-margin-bottom:35px;
-}
-
-/* ================================================= /
-/ ===================== BUTTON ==================== /
-/ ================================================= */
-
-.btn{
-padding:16px 40px;
-border;
-border-radius:50px;
-background:#B99763;
-color;
-cursor;
-transition:.4s;
-
-box-shadow:
-0 15px 30px rgba(18,24,32,0.28);
-
-font-size:1rem;
-}
-
-.btn{
-transform(-6px);
-background:#CFAE72;
-}
-
-/* ================================================= /
-/ ==================== PARTICLES ================== /
-/ ================================================= */
-
-.particles span,
-.leaves span{
-position;
-bottom:-20px;
-border-radius:50%;
-animation linear infinite;
-}
-
-.particles span{
-width:6px;
-height:6px;
-background(255,255,255,0.25);
-}
-
-@keyframes float{
-
-from{
-transform(0);
-opacity:0;
-}
-
-to{
-transform(-120vh);
-opacity:1;
-}
-}
-
-/* ================================================= /
-/ ===================== LEAVES ==================== /
-/ ================================================= */
-
-.leaves span{
-top:-10%;
-width:18px;
-height:18px;
-
-background:
-radial-gradient(
-circle,
-#748592,
-#5E6C79
-);
-
-border-radius:60% 40% 70% 30%;
-
-opacity:.35;
-
-animation linear infinite;
-}
-
-@keyframes leafFall{
-
-from{
-transform:
-translateY(-10vh)
-rotate(0deg);
-
-opacity:0;
-}
-
-to{
-transform:
-translateY(120vh)
-rotate(360deg);
-
-opacity:.35;
-}
-}
-
-/* ================================================= /
-/ ====================== FADE ===================== /
-/ ================================================= */
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform(30px);
-}
-
-to{
-opacity:1;
-transform(0);
-}
-}
-
-/* ================================================= /
-/ ================= DESTINATIONS ================== /
-/ ================================================= */
-
-.destinations{
-
-position;
-
-padding:
-220px 7%
-160px;
-
-overflow;
-
-isolation;
-
-background:
-
-radial-gradient(
-  circle at 20% 10%,
-  rgba(170,184,194,0.12),
-  transparent 24%
-),
-
-radial-gradient(
-  circle at 80% 30%,
-  rgba(111,129,145,0.14),
-  transparent 28%
-),
-
-radial-gradient(
-  circle at 50% 100%,
-  rgba(255,255,255,0.04),
-  transparent 40%
-),
-
-linear-gradient(
-  180deg,
-  #566D7F 0%,
-  #4F6678 18%,
-  #465B6B 42%,
-  #3E5364 68%,
-  #2E3D49 100%
-);
-}
-
-/* ================================================= /
-/ ================= WASHI TEXTURE ================= /
-/ ================================================= */
-
-.destinations::before{
-
-content:"";
-
-position;
-
-inset:0;
-
-z-index:0;
-
-background:
-
-repeating-radial-gradient(
-  circle at 20% 30%,
-  rgba(255,255,255,0.018) 0px,
-  rgba(255,255,255,0.018) 1px,
-  transparent 2px,
-  transparent 9px
-),
-
-repeating-linear-gradient(
-  90deg,
-  rgba(255,255,255,0.01) 0px,
-  rgba(255,255,255,0.01) 1px,
-  transparent 2px,
-  transparent 5px
-),
-
-repeating-linear-gradient(
-  0deg,
-  rgba(0,0,0,0.015) 0px,
-  rgba(0,0,0,0.015) 1px,
-  transparent 3px,
-  transparent 7px
-),
-
-url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
-opacity:.42;
-
-mix-blend-mode;
-
-pointer-events;
-}
-
-/* ================================================= /
-/ ================= ATMOSPHERIC INK =============== /
-/ ================================================= */
-
-.destinations::after{
-
-content:"";
-
-position;
-
-inset:-20%;
-
-z-index:0;
-
-background:
-
-radial-gradient(
-  circle at 12% 20%,
-  rgba(111,129,145,0.24),
-  transparent 26%
-),
-
-radial-gradient(
-  circle at 82% 72%,
-  rgba(170,184,194,0.14),
-  transparent 32%
-),
-
-radial-gradient(
-  circle at 50% 40%,
-  rgba(62,83,100,0.28),
-  transparent 52%
-),
-
-radial-gradient(
-  circle at 72% 18%,
-  rgba(207,174,114,0.10),
-  transparent 12%
-),
-
-radial-gradient(
-  circle at 22% 78%,
-  rgba(185,151,99,0.08),
-  transparent 16%
-);
-filter(100px);
-
-opacity:1;
-
-animation:
-atmosphereMove 30s ease-in-out infinite alternate;
-
-pointer-events;
-}
-
-@keyframes atmosphereMove{
-
-from{
-transform:
-translateY(0px)
-translateX(0px)
-scale(1);
-}
-
-to{
-transform:
-translateY(-10px)
-translateX(6px)
-scale(1.03);
-}
-}
-
-/* ================================================= /
-/ ================= FILM GRAIN ==================== /
-/ ================================================= */
-
-.film-grain{
-
-position;
-
-inset:0;
-
-z-index:1;
-
-opacity:.06;
-
-mix-blend-mode;
-
-background-image:
-url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-
-pointer-events;
-
-animation:
-grainMove .25s steps(2) infinite;
-}
-
-@keyframes grainMove{
-
-0%{
-transform(0,0);
-}
-
-25%{
-transform(-1px,1px);
-}
-
-50%{
-transform(1px,-1px);
-}
-
-75%{
-transform(1px,1px);
-}
-
-100%{
-transform(0,0);
-}
-}
-
-/* ================================================= /
-/ ================= AMBIENT FOG =================== /
-/ ================================================= */
-
-.ambient-fog{
-
-position;
-
-inset:0;
-
-z-index:1;
-
-background:
-
-radial-gradient(
-  circle at 25% 25%,
-  rgba(255,255,255,0.04),
-  transparent 30%
-),
-
-radial-gradient(
-  circle at 80% 60%,
-  rgba(255,255,255,0.025),
-  transparent 38%
-);
-filter(40px);
-
-animation:
-fogMoveAmbient 20s ease-in-out infinite alternate;
-
-pointer-events;
-}
-
-@keyframes fogMoveAmbient{
-
-from{
-transform(0px);
-}
-
-to{
-transform(-12px);
-}
-}
-
-/* ================================================= /
-/ ================= GOLD PARTICLES ================ /
-/ ================================================= */
-
-.gold-particles{
-
-position;
-
-inset:0;
-
-z-index:1;
-
-overflow;
-
-pointer-events;
-}
 
-.gold-particles span{
+  display:block;
 
-position;
+  padding:20px 40px;
 
-width:2px;
-height:2px;
+  color:white;
 
-border-radius:50%;
-
-background:#CFAE72;
-
-box-shadow:
-0 0 8px rgba(207,174,114,0.25);
-
-opacity:.6;
-
-animation:
-particleFloat linear infinite;
-}
-
-.gold-particles span(1){
-top:12%;
-left:18%;
-animation-duration:18s;
-}
-
-.gold-particles span(2){
-top:24%;
-left:72%;
-animation-duration:22s;
-}
-
-.gold-particles span(3){
-top:68%;
-left:30%;
-animation-duration:20s;
-}
-
-.gold-particles span(4){
-top:82%;
-left:84%;
-animation-duration:26s;
-}
-
-.gold-particles span(5){
-top:46%;
-left:58%;
-animation-duration:24s;
-}
-
-.gold-particles span(6){
-top:16%;
-left:52%;
-animation-duration:19s;
-}
-
-@keyframes particleFloat{
-
-from{
-transform:
-translateY(0px)
-scale(1);
-
-opacity:.2;
-}
-
-50%{
-opacity:.7;
-}
-
-to{
-transform:
-translateY(-12px)
-scale(1.25);
-
-opacity:.18;
-}
-}
-
-/* ================================================= /
-/ ====================== INTRO ==================== /
-/ ================================================= */
-
-.section-intro{
-
-position;
-z-index:2;
-
-max-width:900px;
-
-margin;
-
-text-align;
-
-margin-bottom:110px;
-}
-
-.section-mini{
-color:#CFAE72;
-letter-spacing:4px;
-text-transform;
-font-size:.85rem;
-margin-bottom:20px;
-}
-
-.section-title{
-
-font-family:'Cormorant Garamond', serif;
-
-font-size:5.2rem;
-
-line-height:1;
-
-color:#F3F6F8;
-
-margin-bottom:34px;
-
-text-shadow:
-0 10px 35px rgba(0,0,0,0.22);
-}
-
-.section-text{
-color:#D5DDE3;
-line-height:1.9;
-font-size:1.08rem;
-}
-
-/* ================================================= /
-/ ======================= GRID ==================== /
-/ ================================================= */
-
-.destination-grid{
-
-display;
-
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:35px;
-
-position;
-z-index:2;
-}
-
-/* ================================================= /
-/ ======================= CARD ==================== /
-/ ================================================= */
-
-.destination-card{
-
-position;
-
-overflow;
-
-border-radius:36px;
-
-min-height:460px;
-
-display;
-
-text-decoration;
-
-background:
-rgba(255,255,255,0.02);
-
-border:
-1px solid rgba(207,174,114,0.24);
-
-box-shadow:
-
-0 0 0 1px rgba(140,60,50,0.16),
-
-0 18px 50px rgba(18,24,32,0.42),
-
-inset 0 0 0 1px rgba(255,255,255,0.04);
-transition:
-transform .8s ease,
-box-shadow .8s ease,
-border .8s ease;
-
-isolation;
-
-backdrop-filter(2px);
-}
-
-.destination-card{
-
-transform:
-translateY(-14px)
-scale(1.02);
-
-border:
-1px solid rgba(207,174,114,0.46);
-
-box-shadow:
-
-0 0 0 1px rgba(160,70,60,0.22),
-
-0 35px 80px rgba(18,24,32,0.56),
-
-0 0 35px rgba(185,151,99,0.14);
-}
-
-/* ================================================= /
-/ ================= ASIAN FRAME =================== /
-/ ================================================= */
-
-.destination-card::before{
-
-content:"";
-
-position;
-
-inset:12px;
-
-border-radius:28px;
-
-border:
-1px solid rgba(207,174,114,0.24);
-
-z-index:5;
-
-pointer-events;
-
-box-shadow:
-inset 0 0 25px rgba(185,151,99,0.04);
-}
-
-.destination-card::after{
-
-content:"";
-
-position;
-
-inset:0;
-
-background:
-
-linear-gradient(
-  135deg,
-  rgba(120,30,20,0.08),
-  transparent 28%,
-  transparent 70%,
-  rgba(120,30,20,0.05)
-);
-z-index:1;
-
-pointer-events;
-
-mix-blend-mode;
-}
-
-/* ================================================= /
-/ ======================= IMAGE =================== /
-/ ================================================= */
-
-.destination-image{
-position;
-inset:0;
-}
-
-.destination-image::after{
-
-content:"";
-
-position;
-
-inset:0;
-
-background:
-
-/* ================= TOP ATMOSPHERE ================= */
-
-linear-gradient(
-  to bottom,
-  rgba(18,24,32,0.08),
-  transparent 22%
-),
-
-/* ================= CENTER SOFT FOG ================= */
-
-radial-gradient(
-  circle at 50% 75%,
-  rgba(18,24,32,0.18),
-  transparent 45%
-),
-
-/* ================= MAIN CINEMATIC SHADOW ================= */
-
-linear-gradient(
-  to top,
-  rgba(10,14,18,0.92) 0%,
-  rgba(18,24,32,0.76) 28%,
-  rgba(18,24,32,0.22) 58%,
-  transparent 78%
-);
-}
-.destination-image img{
-width:100%;
-height:100%;
-object-fit;
-transition:1.3s;
-}
-
-.destination-card img{
-transform(1.08);
-}
-
-/* ================================================= /
-/ ====================== CONTENT ================== /
-/ ================================================= */
-
-.destination-content{
-
-position;
-
-left:24px;
-right:24px;
-bottom:24px;
-
-padding:26px;
-
-border-radius:26px;
-
-z-index:4;
-
-background:
-
-linear-gradient(
-  to bottom,
-  rgba(18,24,32,0.20),
-  rgba(10,14,18,0.45)
-);
-backdrop-filter(14px);
-
-border:
-1px solid rgba(255,255,255,0.08);
-
-box-shadow:
-
-0 10px 30px rgba(0,0,0,0.22),
-
-inset 0 0 0 1px rgba(255,255,255,0.03);
-}
-
-/* ================================================= /
-/ ================= TEXT BACKDROP ================= /
-/ ================================================= */
-
-.destination-content::before{
-
-content:"";
-
-position;
-
-left:-10%;
-bottom:-20px;
-
-width:120%;
-height:220px;
-
-background:
-
-radial-gradient(
-  ellipse at center,
-  rgba(10,14,18,0.55),
-  transparent 72%
-);
-filter(24px);
-
-z-index:-1;
-
-pointer-events;
-}
-
-.destination-content h3{
-
-font-family:'Cormorant Garamond', serif;
-
-font-size:2.6rem;
-
-line-height:1.05;
-
-margin-bottom:14px;
-
-color;
-
-text-shadow:
-
-0 6px 18px rgba(0,0,0,0.55);
-}
-
-.destination-content p{
-
-color(255,255,255,0.92);
-
-line-height:1.7;
-
-margin-bottom:24px;
-
-text-shadow:
-0 4px 12px rgba(0,0,0,0.45);
-}
-
-/* ================================================= /
-/ ====================== BUTTON =================== /
-/ ================================================= */
-
-.destination-btn{
-
-display;
-
-align-items;
-
-gap:10px;
-
-padding:
-14px 24px;
-
-border-radius:50px;
-
-background:
-rgba(255,255,255,0.10);
-
-backdrop-filter(10px);
-
-color;
-
-transition:.4s;
-
-border:
-1px solid rgba(255,255,255,0.08);
-
-width;
-}
-
-.destination-btn{
-background:
-rgba(255,255,255,0.18);
-
-transform(5px);
-}
-
-/* ================================================= /
-/ ==================== RESPONSIVE ================= /
-/ ================================================= */
-
-@media(max-width:768px){
-
-.hero{
-background-attachment;
-}
-
-.hero h1{
-font-size:2.2rem;
-}
-
-.slogan{
-font-size:1.4rem;
+  transition:.3s;
 }
 
-.logo{
-font-size:1.8rem;
-}
-
-.menu{
-width:100%;
-}
+.menu a:hover{
 
-.destinations{
-padding:
-170px 6%
-120px;
-}
+  background:
+    rgba(255,255,255,0.06);
 
-.section-title{
-font-size:3.4rem;
+  padding-left:55px;
 }
 
-.destination-card{
-min-height:360px;
-}
+.menu a.active{
 
+  color:#CFAE72;
 }
-
 
 /* ================================================= */
-/* ================= PROMOTIONS ==================== */
+/* ====================== HERO ===================== */
 /* ================================================= */
 
-.promotions{
+.hero{
+
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
 
   position:relative;
 
-  padding:
-    140px 7%
-    160px;
+  background:
+    linear-gradient(
+      rgba(18,24,32,0.42),
+      rgba(18,24,32,0.58)
+    ),
+    url('img/sunset-train.jpg');
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  overflow:hidden;
+
+  isolation:isolate;
+}
+
+/* ================================================= */
+/* ============ HERO CINEMATIC TRANSITION ========== */
+/* ================================================= */
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-1px;
+
+  width:100%;
+  height:260px;
+
+  z-index:2;
 
   background:
 
     linear-gradient(
-      180deg,
-      #2E3D49 0%,
-      #25313B 100%
+      to bottom,
+      rgba(62,83,100,0) 0%,
+      rgba(62,83,100,0.15) 18%,
+      rgba(62,83,100,0.42) 42%,
+      rgba(62,83,100,0.78) 68%,
+      #3E5364 100%
     );
 
-  overflow:hidden;
+  pointer-events:none;
 }
 
-.promotions::before{
+/* ================================================= */
+/* ======================= FOG ===================== */
+/* ================================================= */
+
+.fog{
+
+  position:absolute;
+  inset:0;
+
+  background:
+
+    radial-gradient(
+      circle at 30% 60%,
+      rgba(255,255,255,0.05),
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(255,255,255,0.04),
+      transparent 40%
+    );
+
+  animation:fogMove 20s linear infinite;
+}
+
+@keyframes fogMove{
+
+  0%{
+    transform:translateX(0);
+  }
+
+  50%{
+    transform:translateX(-20px);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
+}
+
+/* ================================================= */
+/* ====================== GLOW ===================== */
+/* ================================================= */
+
+.glow{
+
+  position:absolute;
+  inset:0;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(170,184,194,0.10),
+      transparent 45%
+    );
+
+  pointer-events:none;
+}
+
+/* ================================================= */
+/* ================== HERO CONTENT ================= */
+/* ================================================= */
+
+.hero-content{
+
+  position:relative;
+  z-index:3;
+
+  max-width:850px;
+
+  padding:20px;
+
+  animation:fadeUp 2s ease;
+}
+
+.slogan{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2rem;
+
+  margin-bottom:20px;
+
+  color:#D7E1E8;
+}
+
+.hero h1{
+
+  font-size:3.5rem;
+
+  font-weight:300;
+
+  line-height:1.2;
+
+  margin-bottom:25px;
+}
+
+.hero-subtitle{
+
+  max-width:650px;
+
+  margin:auto;
+
+  color:#D7E1E8;
+
+  line-height:1.8;
+
+  margin-bottom:35px;
+}
+
+/* ================================================= */
+/* ===================== BUTTON ==================== */
+/* ================================================= */
+
+.btn{
+
+  display:inline-block;
+
+  padding:16px 40px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:#B99763;
+
+  color:white;
+
+  transition:.4s;
+
+  box-shadow:
+    0 15px 30px rgba(18,24,32,0.28);
+
+  font-size:1rem;
+}
+
+.btn:hover{
+
+  transform:translateY(-6px);
+
+  background:#CFAE72;
+}
+
+/* ================================================= */
+/* ==================== PARTICLES ================== */
+/* ================================================= */
+
+.particles span,
+.leaves span{
+
+  position:absolute;
+
+  bottom:-20px;
+
+  border-radius:50%;
+
+  animation:float linear infinite;
+}
+
+.particles span{
+
+  width:6px;
+  height:6px;
+
+  background:
+    rgba(255,255,255,0.25);
+}
+
+@keyframes float{
+
+  from{
+    transform:translateY(0);
+    opacity:0;
+  }
+
+  to{
+    transform:translateY(-120vh);
+    opacity:1;
+  }
+}
+
+/* ================================================= */
+/* ===================== LEAVES ==================== */
+/* ================================================= */
+
+.leaves span{
+
+  top:-10%;
+
+  width:18px;
+  height:18px;
+
+  background:
+    radial-gradient(
+      circle,
+      #748592,
+      #5E6C79
+    );
+
+  border-radius:60% 40% 70% 30%;
+
+  opacity:.35;
+
+  animation:leafFall linear infinite;
+}
+
+@keyframes leafFall{
+
+  from{
+
+    transform:
+      translateY(-10vh)
+      rotate(0deg);
+
+    opacity:0;
+  }
+
+  to{
+
+    transform:
+      translateY(120vh)
+      rotate(360deg);
+
+    opacity:.35;
+  }
+}
+
+/* ================================================= */
+/* ====================== FADE ===================== */
+/* ================================================= */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================================================= */
+/* ================= DESTINATIONS ================== */
+/* ================================================= */
+
+.destinations{
+
+  position:relative;
+
+  padding:
+    220px 7%
+    160px;
+
+  overflow:hidden;
+
+  isolation:isolate;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(170,184,194,0.12),
+      transparent 24%
+    ),
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(111,129,145,0.14),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(255,255,255,0.04),
+      transparent 40%
+    ),
+
+    linear-gradient(
+      180deg,
+      #566D7F 0%,
+      #4F6678 18%,
+      #465B6B 42%,
+      #3E5364 68%,
+      #2E3D49 100%
+    );
+}
+
+/* ================================================= */
+/* ================= WASHI TEXTURE ================= */
+/* ================================================= */
+
+.destinations::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:0;
+
+  background:
+
+    repeating-radial-gradient(
+      circle at 20% 30%,
+      rgba(255,255,255,0.018) 0px,
+      rgba(255,255,255,0.018) 1px,
+      transparent 2px,
+      transparent 9px
+    ),
+
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.01) 0px,
+      rgba(255,255,255,0.01) 1px,
+      transparent 2px,
+      transparent 5px
+    ),
+
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.015) 0px,
+      rgba(0,0,0,0.015) 1px,
+      transparent 3px,
+      transparent 7px
+    ),
+
+    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+
+  opacity:.42;
+
+  mix-blend-mode:soft-light;
+
+  pointer-events:none;
+}
+
+/* ================================================= */
+/* ================= ATMOSPHERIC INK =============== */
+/* ================================================= */
+
+.destinations::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-20%;
+
+  z-index:0;
+
+  background:
+
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(111,129,145,0.24),
+      transparent 26%
+    ),
+
+    radial-gradient(
+      circle at 82% 72%,
+      rgba(170,184,194,0.14),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(62,83,100,0.28),
+      transparent 52%
+    ),
+
+    radial-gradient(
+      circle at 72% 18%,
+      rgba(207,174,114,0.10),
+      transparent 12%
+    ),
+
+    radial-gradient(
+      circle at 22% 78%,
+      rgba(185,151,99,0.08),
+      transparent 16%
+    );
+
+  filter:blur(100px);
+
+  opacity:1;
+
+  animation:
+    atmosphereMove 30s ease-in-out infinite alternate;
+
+  pointer-events:none;
+}
+
+@keyframes atmosphereMove{
+
+  from{
+    transform:
+      translateY(0px)
+      translateX(0px)
+      scale(1);
+  }
+
+  to{
+    transform:
+      translateY(-10px)
+      translateX(6px)
+      scale(1.03);
+  }
+}
+
+/* ================================================= */
+/* ================= FILM GRAIN ==================== */
+/* ================================================= */
+
+.film-grain{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  opacity:.06;
+
+  mix-blend-mode:soft-light;
+
+  background-image:
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+  pointer-events:none;
+
+  animation:
+    grainMove .25s steps(2) infinite;
+}
+
+@keyframes grainMove{
+
+  0%{
+    transform:translate(0,0);
+  }
+
+  25%{
+    transform:translate(-1px,1px);
+  }
+
+  50%{
+    transform:translate(1px,-1px);
+  }
+
+  75%{
+    transform:translate(1px,1px);
+  }
+
+  100%{
+    transform:translate(0,0);
+  }
+}
+
+/* ================================================= */
+/* ================= AMBIENT FOG =================== */
+/* ================================================= */
+
+.ambient-fog{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  background:
+
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255,255,255,0.04),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(255,255,255,0.025),
+      transparent 38%
+    );
+
+  filter:blur(40px);
+
+  animation:
+    fogMoveAmbient 20s ease-in-out infinite alternate;
+
+  pointer-events:none;
+}
+
+@keyframes fogMoveAmbient{
+
+  from{
+    transform:translateX(0px);
+  }
+
+  to{
+    transform:translateX(-12px);
+  }
+}
+
+/* ================================================= */
+/* ================= GOLD PARTICLES ================ */
+/* ================================================= */
+
+.gold-particles{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+.gold-particles span{
+
+  position:absolute;
+
+  width:2px;
+  height:2px;
+
+  border-radius:50%;
+
+  background:#CFAE72;
+
+  box-shadow:
+    0 0 8px rgba(207,174,114,0.25);
+
+  opacity:.6;
+
+  animation:
+    particleFloat linear infinite;
+}
+
+.gold-particles span:nth-child(1){
+  top:12%;
+  left:18%;
+  animation-duration:18s;
+}
+
+.gold-particles span:nth-child(2){
+  top:24%;
+  left:72%;
+  animation-duration:22s;
+}
+
+.gold-particles span:nth-child(3){
+  top:68%;
+  left:30%;
+  animation-duration:20s;
+}
+
+.gold-particles span:nth-child(4){
+  top:82%;
+  left:84%;
+  animation-duration:26s;
+}
+
+.gold-particles span:nth-child(5){
+  top:46%;
+  left:58%;
+  animation-duration:24s;
+}
+
+.gold-particles span:nth-child(6){
+  top:16%;
+  left:52%;
+  animation-duration:19s;
+}
+
+@keyframes particleFloat{
+
+  from{
+    transform:
+      translateY(0px)
+      scale(1);
+
+    opacity:.2;
+  }
+
+  50%{
+    opacity:.7;
+  }
+
+  to{
+    transform:
+      translateY(-12px)
+      scale(1.25);
+
+    opacity:.18;
+  }
+}
+
+/* ================================================= */
+/* ====================== INTRO ==================== */
+/* ================================================= */
+
+.section-intro{
+
+  position:relative;
+  z-index:2;
+
+  max-width:900px;
+
+  margin:auto;
+
+  text-align:center;
+
+  margin-bottom:110px;
+}
+
+.section-mini{
+  color:#CFAE72;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:.85rem;
+  margin-bottom:20px;
+}
+
+.section-title{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:5.2rem;
+
+  line-height:1;
+
+  color:#F3F6F8;
+
+  margin-bottom:34px;
+
+  text-shadow:
+    0 10px 35px rgba(0,0,0,0.22);
+}
+
+.section-text{
+
+  color:#D5DDE3;
+
+  line-height:1.9;
+
+  font-size:1.08rem;
+}
+
+/* ================================================= */
+/* ======================= GRID ==================== */
+/* ================================================= */
+
+.destination-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+  gap:35px;
+
+  position:relative;
+  z-index:2;
+}
+
+/* ================================================= */
+/* ======================= CARD ==================== */
+/* ================================================= */
+
+.destination-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:36px;
+
+  min-height:460px;
+
+  display:block;
+
+  text-decoration:none;
+
+  background:
+    rgba(255,255,255,0.02);
+
+  border:
+    1px solid rgba(207,174,114,0.24);
+
+  box-shadow:
+
+    0 0 0 1px rgba(140,60,50,0.16),
+
+    0 18px 50px rgba(18,24,32,0.42),
+
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+
+  transition:
+    transform .8s ease,
+    box-shadow .8s ease,
+    border .8s ease;
+
+  isolation:isolate;
+
+  backdrop-filter:blur(2px);
+}
+
+.destination-card:hover{
+
+  transform:
+    translateY(-14px)
+    scale(1.02);
+
+  border:
+    1px solid rgba(207,174,114,0.46);
+
+  box-shadow:
+
+    0 0 0 1px rgba(160,70,60,0.22),
+
+    0 35px 80px rgba(18,24,32,0.56),
+
+    0 0 35px rgba(185,151,99,0.14);
+}
+
+.destination-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:12px;
+
+  border-radius:28px;
+
+  border:
+    1px solid rgba(207,174,114,0.24);
+
+  z-index:5;
+
+  pointer-events:none;
+}
+
+.destination-image{
+  position:absolute;
+  inset:0;
+}
+
+.destination-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:1.3s;
+}
+
+.destination-card:hover img{
+  transform:scale(1.08);
+}
+
+.destination-image::after{
 
   content:"";
 
@@ -1204,19 +1029,113 @@ min-height:360px;
 
   background:
 
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(207,174,114,0.08),
-      transparent 25%
-    ),
+    linear-gradient(
+      to top,
+      rgba(10,14,18,0.92) 0%,
+      rgba(18,24,32,0.76) 28%,
+      rgba(18,24,32,0.22) 58%,
+      transparent 78%
+    );
+}
 
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(170,184,194,0.08),
-      transparent 30%
+/* ================================================= */
+/* ====================== CONTENT ================== */
+/* ================================================= */
+
+.destination-content{
+
+  position:absolute;
+
+  left:24px;
+  right:24px;
+  bottom:24px;
+
+  padding:26px;
+
+  border-radius:26px;
+
+  z-index:4;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(18,24,32,0.20),
+      rgba(10,14,18,0.45)
     );
 
-  pointer-events:none;
+  backdrop-filter:blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.destination-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2.6rem;
+
+  margin-bottom:14px;
+}
+
+.destination-content p{
+
+  color:rgba(255,255,255,0.92);
+
+  line-height:1.7;
+
+  margin-bottom:24px;
+}
+
+.destination-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:
+    14px 24px;
+
+  border-radius:50px;
+
+  background:
+    rgba(255,255,255,0.10);
+
+  color:white;
+
+  transition:.4s;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.destination-btn:hover{
+
+  background:
+    rgba(255,255,255,0.18);
+
+  transform:translateX(5px);
+}
+
+/* ================================================= */
+/* ================= PROMOTIONS ==================== */
+/* ================================================= */
+
+.promotions{
+
+  padding:
+    140px 7%
+    140px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #2E3D49,
+      #25313B
+    );
 }
 
 .promo-grid{
@@ -1227,13 +1146,13 @@ min-height:360px;
     repeat(auto-fit,minmax(300px,1fr));
 
   gap:35px;
-
-  position:relative;
-
-  z-index:2;
 }
 
 .promo-card{
+
+  padding:40px;
+
+  border-radius:30px;
 
   background:
     rgba(255,255,255,0.04);
@@ -1243,14 +1162,7 @@ min-height:360px;
 
   backdrop-filter:blur(15px);
 
-  border-radius:30px;
-
-  padding:40px;
-
   transition:.5s;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,0.25);
 }
 
 .promo-card:hover{
@@ -1260,9 +1172,6 @@ min-height:360px;
 
   border:
     1px solid rgba(207,174,114,0.35);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.35);
 }
 
 .promo-badge{
@@ -1291,27 +1200,23 @@ min-height:360px;
     'Cormorant Garamond',
     serif;
 
-  font-size:2.2rem;
+  font-size:2rem;
 
-  margin-bottom:18px;
+  margin-bottom:15px;
 }
 
 .promo-card p{
 
-  color:#D5DDE3;
-
   line-height:1.8;
 
-  margin-bottom:30px;
+  color:#D5DDE3;
+
+  margin-bottom:25px;
 }
 
 .promo-btn{
 
   display:inline-block;
-
-  text-decoration:none;
-
-  color:white;
 
   padding:
     14px 24px;
@@ -1321,8 +1226,7 @@ min-height:360px;
   background:
     rgba(255,255,255,0.08);
 
-  border:
-    1px solid rgba(255,255,255,0.1);
+  color:white;
 
   transition:.4s;
 }
@@ -1331,18 +1235,199 @@ min-height:360px;
 
   background:
     rgba(255,255,255,0.18);
-
-  transform:
-    translateY(-2px);
 }
 
 /* ================================================= */
-/* ============ BUTTON FIX FOR <a> TAG ============= */
+/* ================= NEWSLETTER ==================== */
 /* ================================================= */
 
-.btn{
+.newsletter-section{
 
-  display:inline-block;
+  padding:
+    140px 7%;
 
-  text-decoration:none;
+  text-align:center;
+
+  background:#22303A;
+}
+
+.newsletter-form{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:15px;
+
+  flex-wrap:wrap;
+
+  margin-top:40px;
+}
+
+.newsletter-form input{
+
+  width:320px;
+
+  max-width:100%;
+
+  padding:16px 20px;
+
+  border:none;
+
+  border-radius:50px;
+
+  outline:none;
+}
+
+.newsletter-form button{
+
+  padding:
+    16px 28px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:#CFAE72;
+
+  color:#1f2933;
+
+  cursor:pointer;
+
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.newsletter-form button:hover{
+
+  transform:translateY(-3px);
+}
+
+/* ================================================= */
+/* ==================== FOOTER ===================== */
+/* ================================================= */
+
+.footer{
+
+  background:#18222A;
+
+  padding:80px 7% 30px;
+}
+
+.footer-content{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap:40px;
+
+  margin-bottom:50px;
+}
+
+.footer-brand h3{
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+
+  font-size:2rem;
+
+  margin-bottom:10px;
+}
+
+.footer-links{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+}
+
+.footer-links h4{
+
+  color:#CFAE72;
+
+  margin-bottom:10px;
+}
+
+.footer-links a{
+
+  color:#D5DDE3;
+
+  transition:.3s;
+}
+
+.footer-links a:hover{
+
+  color:#CFAE72;
+}
+
+.footer-links p{
+
+  color:#D5DDE3;
+}
+
+.footer-bottom{
+
+  text-align:center;
+
+  padding-top:25px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.08);
+
+  color:#AAB8C2;
+}
+
+/* ================================================= */
+/* ==================== RESPONSIVE ================= */
+/* ================================================= */
+
+@media(max-width:768px){
+
+  .hero{
+    background-attachment:scroll;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+
+  .slogan{
+    font-size:1.4rem;
+  }
+
+  .logo{
+    font-size:1.8rem;
+  }
+
+  .menu{
+    width:100%;
+  }
+
+  .destinations,
+  .promotions,
+  .newsletter-section{
+
+    padding-left:6%;
+    padding-right:6%;
+  }
+
+  .section-title{
+    font-size:3.4rem;
+  }
+
+  .destination-card{
+    min-height:360px;
+  }
+
+  .newsletter-form{
+    flex-direction:column;
+    align-items:center;
+  }
+
 }
