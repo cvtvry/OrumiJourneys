@@ -577,7 +577,63 @@ body::after{
 
   letter-spacing:1px;
 }
+/* ================================================= */
+/* ==================== NAV MENU =================== */
+/* ================================================= */
 
+.nav-menu{
+  display:flex;
+  gap:26px;
+}
+
+.nav-menu a{
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:.92rem;
+
+  letter-spacing:1px;
+
+  transition:.4s;
+
+  opacity:.82;
+
+  position:relative;
+}
+
+.nav-menu a:hover{
+
+  opacity:1;
+
+  color:#B89A63;
+}
+
+.nav-menu a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:-6px;
+
+  width:0;
+
+  height:1px;
+
+  background:#B89A63;
+
+  transition:.4s;
+}
+
+.nav-menu a:hover::after{
+
+  width:100%;
+}
+  
 /* ================================================= */
 /* ====================== HERO ===================== */
 /* ================================================= */
@@ -1405,14 +1461,24 @@ body::after{
 
 </div>
 
-<header class="header">
+<<header class="header">
 
   <a href="index.html" class="logo">
     Orumi Journeys
   </a>
 
-</header>
+  <nav class="nav-menu">
 
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="book-now.html">Book Now</a>
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact</a>
+
+  </nav>
+
+</header>
+  
 <section class="hero">
 
   <div class="hero-image">
