@@ -1,1 +1,1915 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jiufen | Orumi Journeys</title>
+
+<!-- ================================================= -->
+<!-- ===================== FUENTES =================== -->
+<!-- ================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================================================= */
+/* ====================== RESET ==================== */
+/* ================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:'Nunito', sans-serif;
+
+  overflow-x:hidden;
+
+  color:white;
+
+  background:#1a1f1d;
+
+  position:relative;
+}
+
+/* ================================================= */
+/* ================= MAIN BACKGROUND =============== */
+/* ================================================= */
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-10;
+
+  background:
+
+    /* LUZ SUPERIOR */
+
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(255,255,255,0.22),
+      transparent 38%
+    ),
+
+    /* SOMBRA IZQUIERDA */
+
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(25,32,30,0.34),
+      transparent 44%
+    ),
+
+    /* SOMBRA DERECHA */
+
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(20,26,24,0.30),
+      transparent 42%
+    ),
+
+    /* MANCHA VERDE BOSQUE */
+
+    radial-gradient(
+      circle at 24% 72%,
+      rgba(68,86,70,0.24),
+      transparent 32%
+    ),
+
+    /* MANCHA ROJA ARCILLA */
+
+    radial-gradient(
+      circle at 82% 38%,
+      rgba(122,47,43,0.14),
+      transparent 24%
+    ),
+
+    /* WATERCOLOR CENTRAL */
+
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255,255,255,0.05),
+      transparent 56%
+    ),
+
+    /* GRIS NIEBLA */
+
+    radial-gradient(
+      circle at 40% 26%,
+      rgba(180,185,186,0.08),
+      transparent 34%
+    ),
+
+    /* PROFUNDIDAD OSCURA */
+
+    radial-gradient(
+      circle at 50% 120%,
+      rgba(10,12,10,0.56),
+      transparent 48%
+    ),
+
+    linear-gradient(
+      180deg,
+
+      #8A8F88 0%,
+
+      #737A75 18%,
+
+      #646B66 36%,
+
+      #59605C 52%,
+
+      #474D49 70%,
+
+      #343834 100%
+    );
+
+  background-attachment:fixed;
+}
+  
+/* ================================================= */
+/* ================= FABRIC TEXTURE ================ */
+/* ================================================= */
+
+body::after{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-9;
+
+  opacity:.14;
+
+  background-image:
+
+    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+
+  mix-blend-mode:soft-light;
+
+  pointer-events:none;
+}
+  
+/* ================================================= */
+/* ================ FOREST ATMOSPHERE ============= */
+/* ================================================= */
+
+.forest-atmosphere{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-8;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+/* ================================================= */
+/* =================== FOREST FOG ================== */
+/* ================================================= */
+
+.forest-fog{
+
+  position:absolute;
+
+  inset:-10%;
+
+  background:
+
+    radial-gradient(
+      circle at 18% 24%,
+      rgba(255,255,255,0.06),
+      transparent 24%
+    ),
+
+    radial-gradient(
+      circle at 80% 34%,
+      rgba(255,255,255,0.05),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 52% 76%,
+      rgba(255,255,255,0.04),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 40% 52%,
+      rgba(91,35,33,0.14),
+      transparent 26%
+    ),
+
+    radial-gradient(
+      circle at 68% 68%,
+      rgba(68,86,70,0.16),
+      transparent 30%
+    );
+
+  filter:blur(120px);
+
+  opacity:.95;
+
+  animation:
+    forestFogMove 40s ease-in-out infinite alternate;
+}
+
+@keyframes forestFogMove{
+
+  from{
+
+    transform:
+      translateX(0px)
+      translateY(0px)
+      scale(1);
+  }
+
+  to{
+
+    transform:
+      translateX(-28px)
+      translateY(-12px)
+      scale(1.04);
+  }
+}
+
+/* ================================================= */
+/* =============== GOLD PARTICLES ================== */
+/* ================================================= */
+
+.gold-particles{
+
+  position:absolute;
+
+  inset:0;
+
+  overflow:hidden;
+}
+
+.gold-particles span{
+
+  position:absolute;
+
+  width:2px;
+  height:2px;
+
+  border-radius:50%;
+
+  background:#B89A63;
+
+  opacity:.28;
+
+  box-shadow:
+    0 0 12px rgba(184,154,99,0.28);
+
+  animation:
+    goldFloat linear infinite;
+}
+
+.gold-particles span:nth-child(1){
+  top:14%;
+  left:18%;
+  animation-duration:20s;
+}
+
+.gold-particles span:nth-child(2){
+  top:28%;
+  left:72%;
+  animation-duration:24s;
+}
+
+.gold-particles span:nth-child(3){
+  top:58%;
+  left:42%;
+  animation-duration:28s;
+}
+
+.gold-particles span:nth-child(4){
+  top:74%;
+  left:82%;
+  animation-duration:26s;
+}
+
+.gold-particles span:nth-child(5){
+  top:48%;
+  left:12%;
+  animation-duration:22s;
+}
+
+.gold-particles span:nth-child(6){
+  top:22%;
+  left:52%;
+  animation-duration:18s;
+}
+
+@keyframes goldFloat{
+
+  from{
+
+    transform:
+      translateY(0px)
+      scale(1);
+
+    opacity:.16;
+  }
+
+  50%{
+    opacity:.5;
+  }
+
+  to{
+
+    transform:
+      translateY(-16px)
+      scale(1.3);
+
+    opacity:.18;
+  }
+}
+
+/* ================================================= */
+/* ================= SOFT SCALES =================== */
+/* ================================================= */
+
+.soft-scales{
+
+  position:absolute;
+
+  inset:0;
+
+  overflow:hidden;
+
+  z-index:-5;
+
+  pointer-events:none;
+}
+
+.soft-scales span{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(80px);
+
+  mix-blend-mode:screen;
+
+  opacity:.10;
+
+  animation:
+    softScaleFloat linear infinite alternate;
+}
+
+/* ESCALA 1 */
+
+.soft-scales span:nth-child(1){
+
+  width:520px;
+  height:520px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.12),
+      rgba(170,180,185,0.05),
+      transparent 72%
+    );
+
+  top:-120px;
+  left:-120px;
+
+  animation-duration:28s;
+}
+
+/* ESCALA 2 */
+
+.soft-scales span:nth-child(2){
+
+  width:420px;
+  height:420px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(91,107,93,0.14),
+      transparent 72%
+    );
+
+  top:30%;
+  left:65%;
+
+  animation-duration:32s;
+}
+
+/* ESCALA 3 */
+
+.soft-scales span:nth-child(3){
+
+  width:340px;
+  height:340px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(122,47,43,0.12),
+      transparent 72%
+    );
+
+  bottom:10%;
+  left:18%;
+
+  animation-duration:36s;
+}
+
+/* ESCALA 4 */
+
+.soft-scales span:nth-child(4){
+
+  width:620px;
+  height:620px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 72%
+    );
+
+  top:40%;
+  left:-180px;
+
+  animation-duration:40s;
+}
+
+/* ESCALA 5 */
+
+.soft-scales span:nth-child(5){
+
+  width:460px;
+  height:460px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(184,154,99,0.08),
+      transparent 72%
+    );
+
+  bottom:-120px;
+  right:-120px;
+
+  animation-duration:30s;
+}
+
+@keyframes softScaleFloat{
+
+  from{
+
+    transform:
+      translateY(0px)
+      translateX(0px)
+      scale(1);
+  }
+
+  to{
+
+    transform:
+      translateY(-30px)
+      translateX(20px)
+      scale(1.08);
+  }
+}
+  
+/* ================================================= */
+/* =================== VIGNETTE ==================== */
+/* ================================================= */
+
+.vignette{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-1;
+
+  pointer-events:none;
+
+  background:
+
+    radial-gradient(
+
+      circle at center,
+
+      transparent 34%,
+
+      rgba(0,0,0,0.12) 55%,
+
+      rgba(0,0,0,0.32) 78%,
+
+      rgba(0,0,0,0.58) 100%
+    );
+
+  mix-blend-mode:multiply;
+} 
+  
+/* ================================================= */
+/* ==================== HEADER ===================== */
+/* ================================================= */
+
+.header{
+
+  position:fixed;
+
+  top:0;
+  width:100%;
+
+  padding:22px 32px;
+
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  z-index:999;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(10,12,10,0.58),
+      transparent
+    );
+
+  backdrop-filter:blur(14px);
+}
+
+.logo{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2.3rem;
+
+  color:white;
+
+  text-decoration:none;
+
+  letter-spacing:1px;
+}
+/* ================================================= */
+/* ==================== NAV MENU =================== */
+/* ================================================= */
+
+.nav-menu{
+  display:flex;
+  gap:26px;
+}
+
+.nav-menu a{
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:.92rem;
+
+  letter-spacing:1px;
+
+  transition:.4s;
+
+  opacity:.82;
+
+  position:relative;
+}
+
+.nav-menu a:hover{
+
+  opacity:1;
+
+  color:#B89A63;
+}
+
+.nav-menu a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:-6px;
+
+  width:0;
+
+  height:1px;
+
+  background:#B89A63;
+
+  transition:.4s;
+}
+
+.nav-menu a:hover::after{
+
+  width:100%;
+}
+  
+/* ================================================= */
+/* ====================== HERO ===================== */
+/* ================================================= */
+
+.hero{
+
+  position:relative;
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:flex-end;
+
+  padding:
+    0 8%
+    110px;
+
+  overflow:hidden;
+}
+
+.hero-image{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:0;
+}
+
+.hero-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+    brightness(.55)
+    saturate(.88)
+    contrast(1.06);
+}
+
+.hero-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      to top,
+      rgba(6,10,8,0.98) 0%,
+      rgba(16,20,18,0.82) 28%,
+      rgba(18,24,20,0.36) 54%,
+      transparent 84%
+    );
+}
+
+.fog{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  background:
+
+    radial-gradient(
+      circle at 30% 50%,
+      rgba(255,255,255,0.06),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(255,255,255,0.04),
+      transparent 42%
+    );
+
+  filter:blur(50px);
+
+  animation:
+    fogMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes fogMove{
+
+  from{
+    transform:translateX(0px);
+  }
+
+  to{
+    transform:translateX(-20px);
+  }
+}
+
+.hero-content{
+
+  position:relative;
+
+  z-index:3;
+
+  max-width:760px;
+}
+
+.location{
+
+  color:#B89A63;
+
+  letter-spacing:5px;
+
+  text-transform:uppercase;
+
+  margin-bottom:20px;
+
+  font-size:.9rem;
+}
+
+.hero h1{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:7rem;
+
+  line-height:.92;
+
+  margin-bottom:28px;
+
+  text-shadow:
+    0 12px 40px rgba(0,0,0,0.5);
+}
+
+.hero p{
+
+  max-width:620px;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.88);
+
+  font-size:1.08rem;
+
+  margin-bottom:42px;
+}
+
+/* ================================================= */
+/* ===================== BUTTON ==================== */
+/* ================================================= */
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  padding:
+    16px 30px;
+
+  border-radius:50px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.14),
+      rgba(255,255,255,0.05)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(12px);
+
+  color:white;
+
+  text-decoration:none;
+
+  transition:.5s;
+}
+
+.btn:hover{
+
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(255,255,255,0.14);
+}
+
+/* ================================================= */
+/* ==================== SECTION ==================== */
+/* ================================================= */
+
+.section{
+
+  padding:
+    140px 8%;
+}
+
+.section-title{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:4.6rem;
+
+  margin-bottom:34px;
+
+  text-align:center;
+
+  line-height:1;
+}
+
+.section-text{
+
+  max-width:920px;
+
+  margin:auto;
+
+  text-align:center;
+
+  line-height:2;
+
+  color:rgba(255,255,255,0.82);
+
+  font-size:1.05rem;
+}
+
+  /* ================================================= */
+/* ================= GALLERY INTRO ================= */
+/* ================================================= */
+
+.gallery-intro{
+
+  text-align:center;
+
+  max-width:900px;
+
+  margin:
+    0 auto 70px auto;
+}
+
+.gallery-label{
+
+  display:block;
+
+  margin-bottom:22px;
+
+  letter-spacing:6px;
+
+  font-size:.82rem;
+
+  color:#B89A63;
+
+  opacity:.9;
+}
+
+.gallery-intro h2{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:5rem;
+
+  font-weight:300;
+
+  margin-bottom:24px;
+
+  color:#F4F1EA;
+
+  text-shadow:
+    0 10px 30px rgba(0,0,0,0.34);
+}
+
+.gallery-line{
+
+  width:120px;
+
+  height:1px;
+
+  margin:
+    0 auto 34px auto;
+
+  background:
+
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(184,154,99,0.9),
+      transparent
+    );
+}
+
+.gallery-intro p{
+
+  font-size:1.08rem;
+
+  line-height:2;
+
+  color:rgba(255,255,255,0.70);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .gallery-intro h2{
+
+    font-size:3.2rem;
+  }
+
+}
+  
+/* ================================================= */
+/* ==================== GALLERY ==================== */
+/* ================================================= */
+
+.gallery{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:30px;
+}
+
+.gallery img{
+
+  width:100%;
+
+  height:460px;
+
+  object-fit:cover;
+
+  border-radius:30px;
+
+  transition:1s;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.32);
+}
+
+.gallery img:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+/* ================================================= */
+/* ================= ACTIVITIES ==================== */
+/* ================================================= */
+
+.activities{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+  gap:34px;
+}
+
+.activity-card{
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(14px);
+
+  transition:.7s;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.32);
+}
+
+.activity-card:hover{
+
+  transform:
+    translateY(-10px);
+}
+
+.activity-card img{
+
+  width:100%;
+  height:260px;
+
+  object-fit:cover;
+}
+
+.activity-content{
+
+  padding:34px;
+}
+
+.activity-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2rem;
+
+  margin-bottom:18px;
+}
+
+.activity-content p{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.78);
+}
+
+/* ================================================= */
+/* =================== ITINERARY =================== */
+/* ================================================= */
+
+.itinerary{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:40px;
+}
+
+.day{
+
+  display:grid;
+
+  grid-template-columns:
+    320px 1fr;
+
+  overflow:hidden;
+
+  border-radius:34px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.34);
+
+  transition:.7s;
+}
+
+.day:hover{
+
+  transform:
+    translateY(-6px);
+}
+
+.day-image{
+
+  position:relative;
+
+  height:100%;
+}
+
+.day-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.day-content{
+
+  padding:42px;
+}
+
+.day-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2.6rem;
+
+  margin-bottom:26px;
+
+  color:#B89A63;
+}
+
+.time-block{
+
+  margin-bottom:28px;
+}
+
+.time-block h4{
+
+  font-size:1.1rem;
+
+  color:white;
+
+  margin-bottom:12px;
+
+  letter-spacing:1px;
+}
+
+.time-block p{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.84);
+
+  margin-bottom:10px;
+}
+
+.time-block ul{
+
+  padding-left:18px;
+}
+
+.time-block li{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.78);
+}
+  
+/* ================================================= */
+/* ================= ITINERARY GRID ================ */
+/* ================================================= */
+
+.itinerary-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
+
+  gap:38px;
+
+  margin-top:70px;
+}
+
+.experience-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:34px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.02)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.34);
+
+  backdrop-filter:blur(10px);
+
+  transition:.7s;
+}
+
+.experience-card:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+.experience-card img{
+
+  width:100%;
+
+  height:260px;
+
+  object-fit:cover;
+}
+
+.experience-content{
+
+  padding:34px;
+}
+
+.experience-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2.2rem;
+
+  margin-bottom:24px;
+
+  line-height:1.1;
+}
+
+.experience-content ul{
+
+  padding-left:18px;
+}
+
+.experience-content li{
+
+  margin-bottom:14px;
+
+  color:rgba(255,255,255,0.82);
+
+  line-height:1.7;
+}
+  
+/* ================================================= */
+/* ==================== PACKAGE ==================== */
+/* ================================================= */
+
+.package-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
+
+  gap:40px;
+
+  margin-top:60px;
+}
+
+.package-card{
+
+  overflow:hidden;
+
+  border-radius:38px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.34);
+
+  transition:.7s;
+}
+
+.package-card:hover{
+
+  transform:
+    translateY(-10px);
+}
+
+.package-card img{
+
+  width:100%;
+
+  height:420px;
+
+  object-fit:cover;
+}
+
+.package-content{
+
+  padding:42px;
+}
+
+.package-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:3rem;
+
+  margin-bottom:20px;
+
+  line-height:1;
+}
+
+.package-content h4{
+
+  margin-top:34px;
+
+  margin-bottom:18px;
+
+  color:#B89A63;
+
+  font-size:1.1rem;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
+
+.package-content p{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.82);
+
+  margin-bottom:18px;
+}
+
+.package-content ul{
+
+  padding-left:18px;
+}
+
+.package-content li{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.78);
+}
+
+.price{
+
+  font-size:2.5rem;
+
+  color:#B89A63;
+
+  margin:
+    38px 0 20px;
+}
+  
+/* ================================================= */
+/* ==================== MOBILE ===================== */
+/* ================================================= */
+
+@media(max-width:900px){
+
+  .day{
+    grid-template-columns:1fr;
+  }
+
+  .day-image{
+    height:280px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .hero{
+    padding:0 7% 80px;
+  }
+
+  .hero h1{
+    font-size:4.6rem;
+  }
+
+  .section-title{
+    font-size:3rem;
+  }
+
+  .gallery img{
+    height:320px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="vignette"></div>
+  
+<div class="forest-atmosphere">
+
+<div class="soft-scales">
+
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+</div>
+
+  <div class="forest-fog"></div>
+
+  <div class="gold-particles">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </div>
+
+</div>
+
+<<header class="header">
+
+  <a href="index.html" class="logo">
+    Orumi Journeys
+  </a>
+
+  <nav class="nav-menu">
+
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="book-now.html">Book Now</a>
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact</a>
+
+  </nav>
+
+</header>
+  
+<section class="hero">
+
+  <div class="hero-image">
+    <img src="imgyokushima/fullscreeny.jpg" alt="">
+  </div>
+
+  <div class="fog"></div>
+
+  <div class="hero-content">
+
+    <div class="location">
+  TAIWAN • JIUFEN
+</div>
+
+<h1>
+  Jiufen
+</h1>
+
+<p>
+  Un pueblo suspendido entre montañas y niebla donde las linternas rojas iluminan callejones infinitos, casas de té tradicionales y paisajes que evocan la magia de Studio Ghibli.
+</p>
+    
+    <a href="#itinerary" class="btn">
+      Explorar itinerario →
+    </a>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+  Entre linternas y niebla
+</h2>
+
+<p class="section-text">
+  Jiufen combina historia minera, arquitectura tradicional taiwanesa y una atmósfera nocturna que parece extraída de un mundo fantástico.
+</p>
+  
+</section>
+
+<section class="section">
+  
+<!-- ================================================= -->
+<!-- ================== GALLERY TITLE ================ -->
+<!-- ================================================= -->
+
+<div class="gallery-intro">
+
+  <span class="gallery-label">
+    VISUAL JOURNEY
+  </span>
+
+  <h2>
+    Galería
+  </h2>
+
+  <div class="gallery-line"></div>
+
+  <p>
+
+    Fragmentos de un pueblo montañoso donde las escaleras interminables, las casas de té iluminadas y la niebla crean un escenario digno de una película de fantasía.
+
+  </p>
+
+</div>
+  
+  <div class="gallery">
+
+    <img src="imgjiufen/1landj.jpg" alt="">
+    <img src="imgjiufen/2landj.jpg" alt="">
+    <img src="imgjiufen/3landj.jpg" alt="">
+    
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+    Experiencias
+  </h2>
+
+  <div class="activities">
+
+    <div class="activity-card">
+
+     <img src="imgjiufen/teahousej.jpg" alt="">
+
+<h3>
+  Casas de té tradicionales
+</h3>
+
+<p>
+  Degustaciones de té taiwanés en históricos salones con vistas a montañas y al océano.
+</p>
+      </div>
+
+    </div>
+
+    <div class="activity-card">
+
+      <img src="imgjiufen/lanternsj.jpg" alt="">
+
+<h3>
+  Callejones iluminados
+</h3>
+
+<p>
+  Paseos nocturnos entre escaleras, faroles rojos y rincones que parecen salidos de un cuento.
+</p>
+      </div>
+
+    </div>
+
+    <div class="activity-card">
+
+      <img src="imgjiufen/coastj.jpg" alt="">
+
+<h3>
+  Fotografía cinematográfica
+</h3>
+
+<p>
+  Escenarios llenos de niebla, arquitectura tradicional y vistas panorámicas ideales para capturar la esencia de Jiufen.
+</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="itinerary">
+
+  <h2 class="section-title">
+    Experiencias por Día
+  </h2>
+
+  <p class="section-text">
+
+    Una travesía lenta entre bosques ancestrales, lluvia suave, ryokans tradicionales y paisajes que parecen salidos de una película de Studio Ghibli.
+
+  </p>
+
+  <div class="itinerary-grid">
+
+    <!-- ================= DAY 1 ================= -->
+
+    <div class="experience-card">
+
+      <img src="imgyokushima/hostely.jpg" alt="">
+
+      <div class="experience-content">
+
+        <h3>
+  Día 1 — Llegada a Jiufen
+</h3>
+
+<ul>
+
+<li>Traslado desde Taipei</li>
+
+<li>Check-in en alojamiento tradicional</li>
+
+<li>Primer recorrido por Jiufen Old Street</li>
+
+<li>Mercados locales y gastronomía callejera</li>
+
+<li>Atardecer sobre la costa norte</li>
+
+<li>Cena taiwanesa</li>
+
+</ul>
+      </div>
+
+    </div>
+
+    <!-- ================= DAY 2 ================= -->
+
+    <div class="experience-card">
+
+      <img src="imgyokushima/trekky.jpg" alt="">
+
+      <div class="experience-content">
+
+       <h3>
+  Día 2 — El Corazón de Jiufen
+</h3>
+
+<ul>
+
+<li>Recorrido guiado por callejones históricos</li>
+
+<li>Visita a A-Mei Tea House</li>
+
+<li>Ceremonia tradicional del té</li>
+
+<li>Fotografía urbana</li>
+
+<li>Paseo nocturno entre linternas</li>
+
+<li>Cena temática inspirada en Ghibli</li>
+
+</ul>
+      </div>
+
+    </div>
+
+    <!-- ================= DAY 3 ================= -->
+
+    <div class="experience-card">
+
+      <img src="imgyokushima/1landy.jpg" alt="">
+
+      <div class="experience-content">
+
+       <h3>
+  Día 3 — Senderos y Montañas
+</h3>
+
+<ul>
+
+<li>Ruta panorámica de montaña</li>
+
+<li>Miradores naturales</li>
+
+<li>Almuerzo tradicional</li>
+
+<li>Exploración cultural</li>
+
+<li>Tiempo libre para compras artesanales</li>
+
+</ul>
+      </div>
+
+    </div>
+
+    <!-- ================= DAY 4 ================= -->
+
+    <div class="experience-card">
+
+      <img src="imgyokushima/3landy.jpg" alt="">
+
+      <div class="experience-content">
+
+        <h3>
+  Día 4 — Costa y Cultura
+</h3>
+
+<ul>
+
+<li>Excursión a la costa noreste</li>
+
+<li>Templos tradicionales</li>
+
+<li>Visita a pueblos cercanos</li>
+
+<li>Experiencias gastronómicas locales</li>
+
+<li>Cena de despedida</li>
+
+</ul>
+
+      </div>
+
+    </div>
+
+    <!-- ================= DAY 5 ================= -->
+
+    <div class="experience-card">
+
+      <img src="imgyokushima/contemy.jpg" alt="">
+
+      <div class="experience-content">
+
+        <h3>
+  Día 5 — Regreso
+</h3>
+
+<ul>
+
+<li>Desayuno tradicional</li>
+
+<li>Paseo final por Jiufen</li>
+
+<li>Fotografías y recuerdos</li>
+
+<li>Traslado a Taipei</li>
+
+</ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  
+<!-- ================================================= -->
+<!-- ================= PACKAGE SECTION =============== -->
+<!-- ================================================= -->
+
+<section class="section" id="packages">
+
+  <h2 class="section-title">
+    Vive Jiufen
+  </h2>
+
+  <p class="section-text">
+
+    Descubre una isla donde la lluvia, los bosques y el silencio crean una experiencia única inspirada en el espíritu de Studio Ghibli.
+
+  </p>
+
+  <div class="package-grid">
+
+    <div class="package-card">
+
+      <img src="imgyokushima/packagey.jpg" alt="">
+
+      <div class="package-content">
+
+        <h3>
+          Jiufen — Viaje inspirado en El Viaje de Chihiro
+        </h3>
+
+        <p>
+
+          5 Días / 4 Noches
+
+        </p>
+
+        <p>
+
+          Una experiencia inmersiva en Jiufen inspirada en la atmósfera mágica que evocó la creación de los escenarios más emblemáticos de Studio Ghibli.
+
+        </p>
+
+        <p>
+
+Linternas rojas, callejones infinitos, casas de té tradicionales, mercados históricos y montañas cubiertas por niebla crean una experiencia inolvidable.
+
+        </p>
+
+        <!-- ========================================= -->
+        <!-- ============== INCLUYE ================== -->
+        <!-- ========================================= -->
+
+        <h4>
+          Qué incluye
+        </h4>
+
+        <ul>
+
+          <li>Traslados desde Taipei</li>
+<li>4 noches de alojamiento</li>
+<li>Desayunos tradicionales</li>
+<li>Ceremonia del té</li>
+<li>Tours guiados</li>
+<li>Experiencias gastronómicas</li>
+<li>Entradas culturales</li>
+<li>Mapa ilustrado exclusivo</li>
+          
+        </ul>
+
+        <!-- ========================================= -->
+        <!-- ============== EXPERIENCIA ============== -->
+        <!-- ========================================= -->
+
+        <h4>
+          Experiencia
+        </h4>
+
+        <ul>
+
+          <li>Inspiración Studio Ghibli</li>
+<li>Slow Travel</li>
+<li>Fotografía urbana</li>
+<li>Cultura taiwanesa</li>
+<li>Gastronomía local</li>
+<li>Calles iluminadas por linternas</li>
+        </ul>
+
+        <!-- ========================================= -->
+        <!-- ============ INFO PRÁCTICA ============== -->
+        <!-- ========================================= -->
+
+        <h4>
+          Información práctica
+        </h4>
+
+        <ul>
+
+          <li>Mejor temporada: otoño y primavera</li>
+<li>Nivel físico: bajo</li>
+<li>Zapatos cómodos recomendados</li>
+<li>Chaqueta ligera para la noche</li>
+<li>Cámara fotográfica recomendada</li>
+        </ul>
+
+        <!-- ========================================= -->
+        <!-- ================= PRECIO ================ -->
+        <!-- ========================================= -->
+
+        <div class="price">
+
+  USD 1,050 por persona
+
+</div>
+        <p>
+
+          No incluye vuelos internacionales.
+
+        </p>
+
+        <a href="book-now.html" class="btn">
+
+          Reservar experiencia →
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  
+</body>
+</html>
