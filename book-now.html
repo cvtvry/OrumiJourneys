@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -14,7 +15,7 @@
     Book Your Journey | Orumi Journeys
   </title>
 
-  <!-- ================= FONTS ================= -->
+  <!-- ================= FUENTES ================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -240,6 +241,10 @@
 
     }
 
+    /* ================================================= */
+    /* ================= MAIN ========================== */
+    /* ================================================= */
+
     .booking-section {
 
       padding:
@@ -265,11 +270,481 @@
 
     }
 
+    /* ================================================= */
+    /* ================= FORM ========================== */
+    /* ================================================= */
+
+    .booking-form {
+
+      padding:
+        40px;
+
+      border-radius: 32px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      backdrop-filter: blur(16px);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .step-indicator {
+
+      display: flex;
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      flex-wrap: wrap;
+
+    }
+
+    .step {
+
+      padding:
+        10px 18px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      font-size: 0.85rem;
+
+    }
+
+    .progress-bar {
+
+      width: 100%;
+      height: 8px;
+
+      border-radius: 999px;
+
+      overflow: hidden;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      margin-bottom: 40px;
+
+    }
+
+    .progress {
+
+      width: 65%;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          to right,
+          #a5c8e1,
+          #ffffff
+        );
+
+    }
+
+    .form-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(240px,1fr));
+
+      gap: 24px;
+
+    }
+
+    .field {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+
+    }
+
+    .field label {
+
+      font-size: 0.9rem;
+
+      opacity: 0.8;
+
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+
+      padding:
+        16px 18px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+        rgba(255,255,255,0.06);
+
+      color: white;
+
+      outline: none;
+
+      transition:
+        0.4s ease;
+
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+
+      border:
+        1px solid rgba(255,255,255,0.25);
+
+      background:
+        rgba(255,255,255,0.1);
+
+    }
+
+    textarea {
+
+      min-height: 140px;
+
+      resize: vertical;
+
+    }
+
+    /* ================================================= */
+    /* ================= SUMMARY ======================= */
+    /* ================================================= */
+
+    .summary {
+
+      margin-top: 40px;
+
+      padding:
+        30px;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .summary h3 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+      margin-bottom: 20px;
+
+    }
+
+    .summary-list {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+
+    }
+
+    .summary-item {
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      opacity: 0.85;
+
+    }
+
+    /* ================================================= */
+    /* ================= BUTTONS ======================= */
+    /* ================================================= */
+
+    .buttons {
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 16px;
+
+      margin-top: 40px;
+
+    }
+
+    .btn {
+
+      padding:
+        16px 28px;
+
+      border-radius: 999px;
+
+      border: none;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+
+    }
+
+    .btn:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+    .btn-primary {
+
+      background:
+        white;
+
+      color:
+        #101820;
+
+    }
+
+    .btn-secondary {
+
+      background:
+        rgba(255,255,255,0.1);
+
+      color: white;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+    }
+
+    /* ================================================= */
+    /* ================= SIDEBAR ======================= */
+    /* ================================================= */
+
+    .sidebar {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 24px;
+
+    }
+
+    .sidebar-card {
+
+      padding:
+        30px;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+      backdrop-filter: blur(12px);
+
+    }
+
+    .sidebar-card h3 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+      margin-bottom: 18px;
+
+    }
+
+    .sidebar-card p {
+
+      line-height: 1.8;
+
+      opacity: 0.8;
+
+    }
+
+    .list {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+
+      margin-top: 20px;
+
+    }
+
+    .list div {
+
+      padding:
+        14px 16px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(255,255,255,0.06);
+
+    }
+
+    /* ================================================= */
+    /* ================= WHATSAPP ====================== */
+    /* ================================================= */
+
+    .whatsapp-float {
+
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      width: 70px;
+      height: 70px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        #25D366;
+
+      color: white;
+
+      font-size: 1.6rem;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+
+      z-index: 999;
+
+      transition:
+        transform 0.4s ease;
+
+    }
+
+    .whatsapp-float:hover {
+
+      transform:
+        scale(1.08);
+
+    }
+
+    /* ================================================= */
+    /* ================= CONFIRMATION ================== */
+    /* ================================================= */
+
+    .confirmation {
+
+      margin-top: 30px;
+
+      padding:
+        18px 22px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      display: none;
+
+    }
+
+    .confirmation.active {
+
+      display: block;
+
+      animation:
+        fadeIn 0.6s ease;
+
+    }
+
+    @keyframes fadeIn {
+
+      from {
+
+        opacity: 0;
+        transform:
+          translateY(10px);
+
+      }
+
+      to {
+
+        opacity: 1;
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+    /* ================================================= */
+    /* ================= RESPONSIVE ==================== */
+    /* ================================================= */
+
+    @media (max-width: 1100px) {
+
+      .booking-container {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+    }
+
+    @media (max-width: 800px) {
+
+      .menu {
+
+        display: none;
+
+      }
+
+      .booking-form {
+
+        padding:
+          28px;
+
+      }
+
+      .hero {
+
+        height: 70vh;
+
+      }
+
+    }
+
   </style>
 
 </head>
 
 <body>
+
+  <!-- ================================================= -->
+  <!-- ================= HEADER ======================== -->
+  <!-- ================================================= -->
 
   <header class="header">
 
@@ -277,34 +752,38 @@
       Orumi Journeys
     </div>
 
-    <nav class="menu">
+   <nav class="menu">
 
-      <a href="index.html">
-        Home
-      </a>
+  <a href="index.html">
+    Inicio
+  </a>
 
-      <a href="destinations.html">
-        Destinations
-      </a>
+  <a href="destinations.html">
+    Destinos
+  </a>
 
-      <a
-        href="book-now.html"
-        class="active"
-      >
-        Book Now
-      </a>
+  <a
+    href="book-now.html"
+    class="active"
+  >
+    Reserva
+  </a>
 
-      <a href="about-us.html">
-        About Us
-      </a>
+  <a href="about-us.html">
+    Sobre Nosotros
+  </a>
 
-      <a href="contact-us.html">
-        Contact
-      </a>
+  <a href="contact-us.html">
+    Contacto
+  </a>
 
-    </nav>
+</nav>
 
   </header>
+
+  <!-- ================================================= -->
+  <!-- ================= HERO ========================== -->
+  <!-- ================================================= -->
 
   <section class="hero">
 
@@ -315,15 +794,15 @@
       </p>
 
       <h1>
-        Let's Design Together
+        Diseñemos juntos
         <br>
-        Your Next Experience
+        tu próxima experiencia
       </h1>
 
       <p>
 
-        Slow, cinematic and emotional journeys
-        inspired by the magical landscapes of Asia.
+        Viajes lentos, cinematográficos y emocionales
+        inspirados en paisajes mágicos de Asia.
 
       </p>
 
@@ -331,24 +810,30 @@
 
   </section>
 
+  <!-- ================================================= -->
+  <!-- ================= BOOKING ======================= -->
+  <!-- ================================================= -->
+
   <section class="booking-section">
 
     <div class="booking-container">
+
+      <!-- ================= FORM ================= -->
 
       <div class="booking-form">
 
         <div class="step-indicator">
 
           <div class="step">
-            1. Details
+            1. Datos
           </div>
 
           <div class="step">
-            2. Preferences
+            2. Preferencias
           </div>
 
           <div class="step">
-            3. Confirmation
+            3. Confirmación
           </div>
 
         </div>
@@ -358,20 +843,21 @@
         </div>
 
         <div class="form-grid">
-                    <div class="field">
+
+          <div class="field">
 
             <label>
-              Package Type
+              Tipo de paquete
             </label>
 
             <select>
 
               <option>
-                Traditional
+                Tradicional
               </option>
 
               <option>
-                Customized
+                Personalizado
               </option>
 
             </select>
@@ -381,7 +867,7 @@
           <div class="field">
 
             <label>
-              Selected Destination
+              Destino seleccionado
             </label>
 
             <select>
@@ -413,7 +899,7 @@
           <div class="field">
 
             <label>
-              Travel Dates
+              Fechas de viaje
             </label>
 
             <input type="date">
@@ -423,7 +909,7 @@
           <div class="field">
 
             <label>
-              Number of Travelers
+              Cantidad de viajeros
             </label>
 
             <input
@@ -436,7 +922,7 @@
           <div class="field">
 
             <label>
-              Preferred Accommodation
+              Alojamiento preferido
             </label>
 
             <select>
@@ -454,7 +940,7 @@
               </option>
 
               <option>
-                Nature Cabin
+                Cabaña Natural
               </option>
 
             </select>
@@ -464,21 +950,21 @@
           <div class="field">
 
             <label>
-              Estimated Budget
+              Presupuesto aproximado
             </label>
 
             <select>
 
               <option>
-                $1,000 - $2,000 USD
+                $1.000 - $2.000 USD
               </option>
 
               <option>
-                $2,000 - $4,000 USD
+                $2.000 - $4.000 USD
               </option>
 
               <option>
-                $4,000+ USD
+                $4.000+ USD
               </option>
 
             </select>
@@ -488,13 +974,13 @@
           <div class="field">
 
             <label>
-              Type of Experience
+              Tipo de experiencia
             </label>
 
             <select>
 
               <option>
-                Relaxation
+                Relax
               </option>
 
               <option>
@@ -502,11 +988,11 @@
               </option>
 
               <option>
-                Nature
+                Naturaleza
               </option>
 
               <option>
-                Adventure
+                Aventura
               </option>
 
             </select>
@@ -516,21 +1002,21 @@
           <div class="field">
 
             <label>
-              Transportation
+              Transporte
             </label>
 
             <select>
 
               <option>
-                Flights + Transfers
+                Avión + Traslados
               </option>
 
               <option>
-                Accommodation Only
+                Solo alojamiento
               </option>
 
               <option>
-                Complete Experience
+                Experiencia completa
               </option>
 
             </select>
@@ -540,12 +1026,12 @@
           <div class="field">
 
             <label>
-              Email Address
+              Correo electrónico
             </label>
 
             <input
               type="email"
-              placeholder="your@email.com"
+              placeholder="tu@email.com"
             >
 
           </div>
@@ -553,7 +1039,7 @@
           <div class="field">
 
             <label>
-              WhatsApp / Phone Number
+              WhatsApp / Teléfono
             </label>
 
             <input
@@ -566,13 +1052,13 @@
           <div class="field">
 
             <label>
-              Language
+              Idioma
             </label>
 
             <select>
 
               <option>
-                Spanish
+                Español
               </option>
 
               <option>
@@ -580,7 +1066,7 @@
               </option>
 
               <option>
-                Portuguese
+                Português
               </option>
 
             </select>
@@ -590,7 +1076,7 @@
           <div class="field">
 
             <label>
-              How Did You Hear About Orumi?
+              ¿Cómo conociste Orumi?
             </label>
 
             <input
@@ -608,11 +1094,11 @@
         >
 
           <label>
-            Special Requests
+            Solicitudes especiales
           </label>
 
           <textarea
-            placeholder="Tell us how you imagine your journey..."
+            placeholder="Cuéntanos cómo imaginas tu viaje..."
           ></textarea>
 
         </div>
@@ -622,35 +1108,36 @@
         <div class="summary">
 
           <h3>
-            Package Summary
+            Resumen del paquete
           </h3>
 
           <div class="summary-list">
 
             <div class="summary-item">
-              <span>Destination</span>
+              <span>Destino</span>
               <span>Yakushima</span>
             </div>
 
             <div class="summary-item">
-              <span>Duration</span>
-              <span>5 Days</span>
+              <span>Duración</span>
+              <span>5 días</span>
             </div>
 
             <div class="summary-item">
-              <span>Included</span>
-              <span>Hotel + Tours</span>
+              <span>Incluye</span>
+              <span>Hotel + tours</span>
             </div>
 
             <div class="summary-item">
-              <span>Not Included</span>
-              <span>International Flights</span>
+              <span>No incluye</span>
+              <span>Vuelos internacionales</span>
             </div>
 
           </div>
 
         </div>
-                <!-- ================= BUTTONS ================= -->
+
+        <!-- ================= BUTTONS ================= -->
 
         <div class="buttons">
 
@@ -658,7 +1145,7 @@
             class="btn btn-primary"
             id="sendBtn"
           >
-            Submit Form
+            Enviar formulario
           </button>
 
           <a
@@ -666,15 +1153,15 @@
             target="_blank"
             class="btn btn-secondary"
           >
-            Send via WhatsApp
+            Enviar a WhatsApp
           </a>
 
           <button class="btn btn-secondary">
-            Save PDF
+            Guardar PDF
           </button>
 
           <button class="btn btn-secondary">
-            Schedule a Video Call
+            Agendar videollamada
           </button>
 
         </div>
@@ -686,8 +1173,8 @@
           id="confirmation"
         >
 
-          Your request has been submitted successfully.
-          Our team will respond within 24 hours.
+          Tu solicitud fue enviada correctamente.
+          Nuestro equipo responderá dentro de 24 horas.
 
         </div>
 
@@ -700,25 +1187,25 @@
         <div class="sidebar-card">
 
           <h3>
-            Included
+            Incluye
           </h3>
 
           <div class="list">
 
             <div>
-              Carefully Selected Hotels
+              Hoteles seleccionados
             </div>
 
             <div>
-              Guided Experiences
+              Experiencias guiadas
             </div>
 
             <div>
-              Personalized Support
+              Soporte personalizado
             </div>
 
             <div>
-              Assistance Throughout Your Journey
+              Asistencia durante el viaje
             </div>
 
           </div>
@@ -728,13 +1215,13 @@
         <div class="sidebar-card">
 
           <h3>
-            Flexible Policy
+            Política flexible
           </h3>
 
           <p>
 
-            Free changes up to
-            15 days before departure.
+            Cambios gratuitos hasta
+            15 días antes del viaje.
 
           </p>
 
@@ -743,14 +1230,14 @@
         <div class="sidebar-card">
 
           <h3>
-            Security & Privacy
+            Seguridad y privacidad
           </h3>
 
           <p>
 
-            Your information is protected
-            and used exclusively
-            to manage your booking.
+            Tus datos son protegidos
+            y utilizados únicamente
+            para gestionar tu reserva.
 
           </p>
 
@@ -759,14 +1246,14 @@
         <div class="sidebar-card">
 
           <h3>
-            Testimonials
+            Testimonios
           </h3>
 
           <p>
 
-            “The most cinematic
-            and peaceful travel experience
-            we have ever had.”
+            “La experiencia más
+            cinematográfica y tranquila
+            que hemos vivido.”
 
           </p>
 
@@ -775,21 +1262,21 @@
         <div class="sidebar-card">
 
           <h3>
-            Quick FAQ
+            FAQ rápida
           </h3>
 
           <div class="list">
 
             <div>
-              How long does it take to receive a response?
+              ¿Cuánto demora la respuesta?
             </div>
 
             <div>
-              Can I customize everything?
+              ¿Puedo personalizar todo?
             </div>
 
             <div>
-              Are flights included?
+              ¿Incluye vuelos?
             </div>
 
           </div>
@@ -847,6 +1334,7 @@
     });
 
   </script>
-  </body>
+
+</body>
 
 </html>
