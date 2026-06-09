@@ -1,3 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ofertas Especiales | Orumi Journeys</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f7f4ec;
+color:#243228;
+overflow-x:hidden;
+}
+
+/* ====================================
+BACKGROUND
+==================================== */
+
+.special-offers{
+position:relative;
+padding:120px 0;
+overflow:hidden;
+background:
+linear-gradient(rgba(248,245,236,.92),rgba(248,245,236,.92)),
+url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+
+.special-offers::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,
+rgba(170,210,180,.15),
+transparent 40%),
+radial-gradient(circle at bottom right,
+rgba(180,210,255,.15),
+transparent 40%);
+pointer-events:none;
+}
+
+.container{
+width:92%;
+max-width:1500px;
+margin:auto;
+position:relative;
+z-index:2;
+}
+
+/* ====================================
+HEADER
+==================================== */
+
+.offers-header{
+text-align:center;
+max-width:900px;
+margin:auto;
+margin-bottom:80px;
+}
+
+.section-label{
+letter-spacing:4px;
+font-size:.85rem;
+color:#6b826d;
+text-transform:uppercase;
+margin-bottom:20px;
+font-weight:600;
+}
+
+.offers-header h2{
+font-family:'Cormorant Garamond',serif;
+font-size:6rem;
+font-weight:600;
+color:#203126;
+line-height:1;
+margin-bottom:20px;
+}
+
+.title-line{
+width:90px;
+height:2px;
+background:#7d9679;
+margin:auto;
+margin-bottom:30px;
+}
+
+.offers-subtitle{
+font-size:1.15rem;
+line-height:1.9;
+color:#56665a;
+}
+
+/* ====================================
+GRID
+==================================== */
+
+.offers-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:25px;
+}
+
+/* ====================================
+CARD
+==================================== */
+
+.offer-card{
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(8px);
+border-radius:25px;
+overflow:hidden;
+box-shadow:
+0 10px 25px rgba(0,0,0,.05),
+0 20px 60px rgba(0,0,0,.08);
+transition:.4s;
+position:relative;
+}
+
+.offer-card:hover{
+transform:translateY(-12px);
+}
+
+.offer-image{
+height:260px;
+overflow:hidden;
+}
+
+.offer-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.offer-card:hover img{
+transform:scale(1.08);
+}
+
+/* ====================================
+BADGES
+==================================== */
+
+.discount-badge{
+position:absolute;
+top:18px;
+left:18px;
+padding:10px 16px;
+border-radius:12px;
+font-size:.85rem;
+font-weight:600;
+color:white;
+backdrop-filter:blur(10px);
+z-index:5;
+}
+
+.red{
+background:#dd7979;
+}
+
+.green{
+background:#7f9b75;
+}
+
+.blue{
+background:#6897dc;
+}
+
+.orange{
+background:#e3944d;
+}
+
+.purple{
+background:#9c77da;
+}
+
+/* ====================================
+CONTENT
+==================================== */
+
+.offer-content{
+padding:28px;
+}
+
+.country{
+font-size:.8rem;
+font-weight:600;
+letter-spacing:2px;
+color:#8e8b7c;
+}
+
+.offer-content h3{
+font-family:'Cormorant Garamond',serif;
+font-size:2.2rem;
+margin:10px 0 15px;
+color:#203126;
+}
+
+.offer-content p{
+line-height:1.8;
+font-size:.95rem;
+color:#5f6d62;
+margin-bottom:25px;
+}
+
+/* ====================================
+META
+==================================== */
+
+.offer-meta{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-bottom:25px;
+}
+
+.offer-meta span{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:.9rem;
+color:#68776d;
+}
+
+.offer-meta i{
+color:#7f9b75;
+}
+
+/* ====================================
+FOOTER
+==================================== */
+
+.offer-footer{
+padding-top:20px;
+border-top:1px solid rgba(0,0,0,.08);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+}
+
+.price{
+font-size:.9rem;
+color:#748177;
+}
+
+.price strong{
+display:block;
+font-size:2rem;
+font-weight:700;
+color:#304738;
+}
+
+.offer-btn{
+padding:12px 22px;
+border-radius:50px;
+background:#5f7e64;
+color:white;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+white-space:nowrap;
+}
+
+.offer-btn:hover{
+background:#48624c;
+}
+
+/* ====================================
+BOTTOM
+==================================== */
+
+.offers-bottom{
+margin-top:70px;
+text-align:center;
+font-size:1rem;
+color:#617066;
+}
+
+.offers-bottom i{
+margin-right:8px;
+}
+
+/* ====================================
+RESPONSIVE
+==================================== */
+
+@media(max-width:1400px){
+
+.offers-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+@media(max-width:992px){
+
+.offers-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.offers-header h2{
+font-size:4rem;
+}
+
+}
+
+@media(max-width:768px){
+
+.offers-grid{
+grid-template-columns:1fr;
+}
+
+.offers-header h2{
+font-size:3rem;
+}
+
+.offers-subtitle{
+font-size:1rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
 <section class="special-offers">
 
 <div class="container">
@@ -15,8 +366,7 @@ Ofertas Especiales
 <div class="title-line"></div>
 
 <p class="offers-subtitle">
-Descubre destinos únicos con experiencias inolvidables
-a precios especiales por tiempo limitado.
+Descubre destinos cuidadosamente seleccionados por Orumi Journeys y vive experiencias inolvidables en algunos de los rincones más mágicos de Asia.
 </p>
 
 </div>
@@ -27,54 +377,35 @@ a precios especiales por tiempo limitado.
 
 <div class="offer-card">
 
-<div class="discount-badge">
+<div class="discount-badge red">
 15% OFF
 </div>
 
-<img
-src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1200&auto=format&fit=crop"
-alt="Ginzan Onsen"
->
+<div class="offer-image">
+<img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 <div class="offer-content">
 
-<span class="country">
-JAPÓN
-</span>
+<span class="country">JAPÓN</span>
 
-<h3>
-Ginzan Onsen
-</h3>
+<h3>Ginzan Onsen</h3>
 
 <p>
-Calles nevadas, ryokans históricos y aguas termales
-en uno de los pueblos más encantadores de Japón.
+Ryokans históricos, aguas termales y paisajes nevados en uno de los pueblos más encantadores del Japón tradicional.
 </p>
 
 <div class="offer-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-6 días / 5 noches
-</span>
-
-<span>
-<i class="fa-regular fa-user"></i>
-2 personas
-</span>
-
+<span><i class="fa-regular fa-calendar"></i> 6 días / 5 noches</span>
+<span><i class="fa-regular fa-user"></i> 2 personas</span>
 </div>
 
 <div class="offer-footer">
-
 <div class="price">
-Desde <strong>USD 2.299</strong>
+Desde
+<strong>USD 2.299</strong>
 </div>
-
-<a href="ginzan.html" class="offer-btn">
-Ver oferta
-</a>
-
+<a href="ginzan.html" class="offer-btn">Ver oferta</a>
 </div>
 
 </div>
@@ -89,50 +420,31 @@ Ver oferta
 20% OFF
 </div>
 
-<img
-src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop"
-alt="Yakushima"
->
+<div class="offer-image">
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 <div class="offer-content">
 
-<span class="country">
-JAPÓN
-</span>
+<span class="country">JAPÓN</span>
 
-<h3>
-Yakushima
-</h3>
+<h3>Yakushima</h3>
 
 <p>
-Bosques milenarios, senderos cubiertos de musgo
-y naturaleza que inspiró las películas de Ghibli.
+Bosques milenarios cubiertos de musgo, cascadas ocultas y senderos que inspiraron los escenarios de Studio Ghibli.
 </p>
 
 <div class="offer-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-7 días / 6 noches
-</span>
-
-<span>
-<i class="fa-regular fa-user"></i>
-2 personas
-</span>
-
+<span><i class="fa-regular fa-calendar"></i> 7 días / 6 noches</span>
+<span><i class="fa-regular fa-user"></i> 2 personas</span>
 </div>
 
 <div class="offer-footer">
-
 <div class="price">
-Desde <strong>USD 2.799</strong>
+Desde
+<strong>USD 2.799</strong>
 </div>
-
-<a href="yakushima.html" class="offer-btn">
-Ver oferta
-</a>
-
+<a href="yakushima.html" class="offer-btn">Ver oferta</a>
 </div>
 
 </div>
@@ -147,50 +459,31 @@ Ver oferta
 10% OFF
 </div>
 
-<img
-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop"
-alt="Jeju"
->
+<div class="offer-image">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 <div class="offer-content">
 
-<span class="country">
-COREA DEL SUR
-</span>
+<span class="country">COREA DEL SUR</span>
 
-<h3>
-Jeju Island
-</h3>
+<h3>Jeju Island</h3>
 
 <p>
-Acantilados volcánicos, cascadas y senderos costeros
-en la isla más famosa de Corea.
+Acantilados volcánicos, playas escondidas, senderos costeros y una naturaleza única declarada Patrimonio Mundial.
 </p>
 
 <div class="offer-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-5 días / 4 noches
-</span>
-
-<span>
-<i class="fa-regular fa-user"></i>
-2 personas
-</span>
-
+<span><i class="fa-regular fa-calendar"></i> 5 días / 4 noches</span>
+<span><i class="fa-regular fa-user"></i> 2 personas</span>
 </div>
 
 <div class="offer-footer">
-
 <div class="price">
-Desde <strong>USD 1.799</strong>
+Desde
+<strong>USD 1.799</strong>
 </div>
-
-<a href="jeju.html" class="offer-btn">
-Ver oferta
-</a>
-
+<a href="jeju.html" class="offer-btn">Ver oferta</a>
 </div>
 
 </div>
@@ -205,50 +498,31 @@ Ver oferta
 15% OFF
 </div>
 
-<img
-src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1200&auto=format&fit=crop"
-alt="Jiufen"
->
+<div class="offer-image">
+<img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 <div class="offer-content">
 
-<span class="country">
-TAIWÁN
-</span>
+<span class="country">TAIWÁN</span>
 
-<h3>
-Jiufen
-</h3>
+<h3>Jiufen</h3>
 
 <p>
-Faroles rojos, casas de té y vistas al Pacífico
-en un pueblo suspendido entre las montañas.
+Faroles rojos, casas de té y callejones empedrados con vistas al océano en el pueblo más icónico de Taiwán.
 </p>
 
 <div class="offer-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-6 días / 5 noches
-</span>
-
-<span>
-<i class="fa-regular fa-user"></i>
-2 personas
-</span>
-
+<span><i class="fa-regular fa-calendar"></i> 6 días / 5 noches</span>
+<span><i class="fa-regular fa-user"></i> 2 personas</span>
 </div>
 
 <div class="offer-footer">
-
 <div class="price">
-Desde <strong>USD 2.199</strong>
+Desde
+<strong>USD 2.199</strong>
 </div>
-
-<a href="jiufen.html" class="offer-btn">
-Ver oferta
-</a>
-
+<a href="jiufen.html" class="offer-btn">Ver oferta</a>
 </div>
 
 </div>
@@ -263,50 +537,31 @@ Ver oferta
 10% OFF
 </div>
 
-<img
-src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=1200&auto=format&fit=crop"
-alt="Hoi An"
->
+<div class="offer-image">
+<img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 <div class="offer-content">
 
-<span class="country">
-VIETNAM
-</span>
+<span class="country">VIETNAM</span>
 
-<h3>
-Hoi An
-</h3>
+<h3>Hoi An</h3>
 
 <p>
-Canales iluminados por faroles y una atmósfera
-romántica en la ciudad más fotogénica de Vietnam.
+Canales iluminados por faroles, arquitectura histórica y una atmósfera romántica inolvidable.
 </p>
 
 <div class="offer-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-6 días / 5 noches
-</span>
-
-<span>
-<i class="fa-regular fa-user"></i>
-2 personas
-</span>
-
+<span><i class="fa-regular fa-calendar"></i> 6 días / 5 noches</span>
+<span><i class="fa-regular fa-user"></i> 2 personas</span>
 </div>
 
 <div class="offer-footer">
-
 <div class="price">
-Desde <strong>USD 1.899</strong>
+Desde
+<strong>USD 1.899</strong>
 </div>
-
-<a href="hoian.html" class="offer-btn">
-Ver oferta
-</a>
-
+<a href="hoian.html" class="offer-btn">Ver oferta</a>
 </div>
 
 </div>
@@ -316,224 +571,13 @@ Ver oferta
 </div>
 
 <div class="offers-bottom">
-
 <i class="fa-regular fa-clock"></i>
-
-Ofertas por tiempo limitado.
-Consulta disponibilidad y fechas de salida.
-
+Ofertas por tiempo limitado. Consulta disponibilidad y fechas de salida.
 </div>
 
 </div>
 
 </section>
-/* ==================================
-   SPECIAL OFFERS
-================================== */
 
-.special-offers{
-padding:120px 0;
-background:
-linear-gradient(
-rgba(248,245,236,.92),
-rgba(248,245,236,.92)
-),
-url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1920&auto=format&fit=crop");
-background-size:cover;
-background-position:center;
-}
-
-.offers-header{
-text-align:center;
-max-width:800px;
-margin:auto;
-margin-bottom:70px;
-}
-
-.section-label{
-font-size:.9rem;
-letter-spacing:3px;
-color:#6b7d64;
-text-transform:uppercase;
-margin-bottom:20px;
-}
-
-.offers-header h2{
-font-family:'Cormorant Garamond',serif;
-font-size:5rem;
-color:#233529;
-margin-bottom:20px;
-}
-
-.title-line{
-width:80px;
-height:2px;
-background:#7f9a76;
-margin:auto;
-margin-bottom:25px;
-}
-
-.offers-subtitle{
-font-size:1.15rem;
-line-height:1.8;
-color:#526156;
-}
-
-.offers-grid{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:25px;
-}
-
-.offer-card{
-background:white;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.35s;
-position:relative;
-}
-
-.offer-card:hover{
-transform:translateY(-10px);
-}
-
-.offer-card img{
-height:250px;
-width:100%;
-object-fit:cover;
-}
-
-.discount-badge{
-position:absolute;
-top:18px;
-left:18px;
-padding:10px 15px;
-border-radius:12px;
-background:#e87b7b;
-color:white;
-font-size:.85rem;
-font-weight:600;
-}
-
-.green{
-background:#7e9d70;
-}
-
-.blue{
-background:#5e8fd8;
-}
-
-.orange{
-background:#e5944a;
-}
-
-.purple{
-background:#9b74d8;
-}
-
-.offer-content{
-padding:25px;
-}
-
-.country{
-font-size:.8rem;
-letter-spacing:2px;
-color:#9c8f7b;
-font-weight:600;
-}
-
-.offer-content h3{
-font-family:'Cormorant Garamond',serif;
-font-size:2rem;
-margin:12px 0;
-color:#213126;
-}
-
-.offer-content p{
-line-height:1.8;
-color:#59655d;
-margin-bottom:20px;
-}
-
-.offer-meta{
-display:flex;
-flex-direction:column;
-gap:10px;
-font-size:.9rem;
-color:#66736a;
-margin-bottom:20px;
-}
-
-.offer-footer{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding-top:20px;
-border-top:1px solid #ececec;
-}
-
-.price{
-color:#6d7b70;
-}
-
-.price strong{
-font-size:1.8rem;
-color:#314737;
-}
-
-.offer-btn{
-padding:12px 22px;
-border-radius:50px;
-background:#5f7f63;
-color:white;
-font-weight:600;
-transition:.3s;
-}
-
-.offer-btn:hover{
-background:#46634a;
-}
-
-.offers-bottom{
-margin-top:60px;
-text-align:center;
-font-size:1rem;
-color:#5d685f;
-}
-
-.offers-bottom i{
-margin-right:10px;
-}
-
-@media(max-width:1400px){
-
-.offers-grid{
-grid-template-columns:repeat(3,1fr);
-}
-
-}
-
-@media(max-width:992px){
-
-.offers-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.offers-header h2{
-font-size:3.5rem;
-}
-
-}
-
-@media(max-width:768px){
-
-.offers-grid{
-grid-template-columns:1fr;
-}
-
-.offers-header h2{
-font-size:3rem;
-}
-
-}
+</body>
+</html>
