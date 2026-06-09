@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 
 <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 <title>Jiufen | Orumi Journeys</title>
 
 <!-- ================================================= -->
-<!-- ===================== FUENTES =================== -->
+<!-- ===================== FONTS ===================== -->
 <!-- ================================================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +61,7 @@ body::before{
 
   background:
 
-    /* LUZ SUPERIOR */
+    /* TOP LIGHT */
 
     radial-gradient(
       circle at 50% -10%,
@@ -69,7 +69,7 @@ body::before{
       transparent 38%
     ),
 
-    /* SOMBRA IZQUIERDA */
+    /* LEFT SHADOW */
 
     radial-gradient(
       circle at 0% 50%,
@@ -77,7 +77,7 @@ body::before{
       transparent 44%
     ),
 
-    /* SOMBRA DERECHA */
+    /* RIGHT SHADOW */
 
     radial-gradient(
       circle at 100% 50%,
@@ -85,7 +85,7 @@ body::before{
       transparent 42%
     ),
 
-    /* MANCHA VERDE BOSQUE */
+    /* FOREST GREEN STAIN */
 
     radial-gradient(
       circle at 24% 72%,
@@ -93,7 +93,7 @@ body::before{
       transparent 32%
     ),
 
-    /* MANCHA ROJA ARCILLA */
+    /* CLAY RED STAIN */
 
     radial-gradient(
       circle at 82% 38%,
@@ -101,7 +101,7 @@ body::before{
       transparent 24%
     ),
 
-    /* WATERCOLOR CENTRAL */
+    /* CENTRAL WATERCOLOR */
 
     radial-gradient(
       circle at 50% 50%,
@@ -109,7 +109,7 @@ body::before{
       transparent 56%
     ),
 
-    /* GRIS NIEBLA */
+    /* FOGGY GRAY */
 
     radial-gradient(
       circle at 40% 26%,
@@ -117,7 +117,7 @@ body::before{
       transparent 34%
     ),
 
-    /* PROFUNDIDAD OSCURA */
+    /* DARK DEPTH */
 
     radial-gradient(
       circle at 50% 120%,
@@ -143,7 +143,7 @@ body::before{
 
   background-attachment:fixed;
 }
-  
+
 /* ================================================= */
 /* ================= FABRIC TEXTURE ================ */
 /* ================================================= */
@@ -161,16 +161,15 @@ body::after{
   opacity:.14;
 
   background-image:
-
     url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
 
   mix-blend-mode:soft-light;
 
   pointer-events:none;
 }
-  
+
 /* ================================================= */
-/* ================ FOREST ATMOSPHERE ============= */
+/* ================ FOREST ATMOSPHERE ============== */
 /* ================================================= */
 
 .forest-atmosphere{
@@ -239,7 +238,6 @@ body::after{
 @keyframes forestFogMove{
 
   from{
-
     transform:
       translateX(0px)
       translateY(0px)
@@ -247,7 +245,6 @@ body::after{
   }
 
   to{
-
     transform:
       translateX(-28px)
       translateY(-12px)
@@ -256,7 +253,7 @@ body::after{
 }
 
 /* ================================================= */
-/* =============== GOLD PARTICLES ================== */
+/* ================= GOLD PARTICLES ================ */
 /* ================================================= */
 
 .gold-particles{
@@ -267,8 +264,7 @@ body::after{
 
   overflow:hidden;
 }
-
-.gold-particles span{
+  .gold-particles span{
 
   position:absolute;
 
@@ -382,7 +378,7 @@ body::after{
     softScaleFloat linear infinite alternate;
 }
 
-/* ESCALA 1 */
+/* SCALE 1 */
 
 .soft-scales span:nth-child(1){
 
@@ -403,7 +399,7 @@ body::after{
   animation-duration:28s;
 }
 
-/* ESCALA 2 */
+/* SCALE 2 */
 
 .soft-scales span:nth-child(2){
 
@@ -423,7 +419,7 @@ body::after{
   animation-duration:32s;
 }
 
-/* ESCALA 3 */
+/* SCALE 3 */
 
 .soft-scales span:nth-child(3){
 
@@ -443,7 +439,7 @@ body::after{
   animation-duration:36s;
 }
 
-/* ESCALA 4 */
+/* SCALE 4 */
 
 .soft-scales span:nth-child(4){
 
@@ -463,7 +459,7 @@ body::after{
   animation-duration:40s;
 }
 
-/* ESCALA 5 */
+/* SCALE 5 */
 
 .soft-scales span:nth-child(5){
 
@@ -501,7 +497,7 @@ body::after{
       scale(1.08);
   }
 }
-  
+
 /* ================================================= */
 /* =================== VIGNETTE ==================== */
 /* ================================================= */
@@ -532,8 +528,8 @@ body::after{
     );
 
   mix-blend-mode:multiply;
-} 
-  
+}
+
 /* ================================================= */
 /* ==================== HEADER ===================== */
 /* ================================================= */
@@ -577,6 +573,7 @@ body::after{
 
   letter-spacing:1px;
 }
+
 /* ================================================= */
 /* ==================== NAV MENU =================== */
 /* ================================================= */
@@ -633,7 +630,7 @@ body::after{
 
   width:100%;
 }
-  
+
 /* ================================================= */
 /* ====================== HERO ===================== */
 /* ================================================= */
@@ -783,8 +780,7 @@ body::after{
 
   margin-bottom:42px;
 }
-
-/* ================================================= */
+  /* ================================================= */
 /* ===================== BUTTON ==================== */
 /* ================================================= */
 
@@ -868,7 +864,7 @@ body::after{
   font-size:1.05rem;
 }
 
-  /* ================================================= */
+/* ================================================= */
 /* ================= GALLERY INTRO ================= */
 /* ================================================= */
 
@@ -951,7 +947,7 @@ body::after{
   }
 
 }
-  
+
 /* ================================================= */
 /* ==================== GALLERY ==================== */
 /* ================================================= */
@@ -1183,7 +1179,7 @@ body::after{
 
   color:rgba(255,255,255,0.78);
 }
-  
+
 /* ================================================= */
 /* ================= ITINERARY GRID ================ */
 /* ================================================= */
@@ -1258,8 +1254,7 @@ body::after{
 
   line-height:1.1;
 }
-
-.experience-content ul{
+  .experience-content ul{
 
   padding-left:18px;
 }
@@ -1272,7 +1267,7 @@ body::after{
 
   line-height:1.7;
 }
-  
+
 /* ================================================= */
 /* ==================== PACKAGE ==================== */
 /* ================================================= */
@@ -1390,7 +1385,7 @@ body::after{
   margin:
     38px 0 20px;
 }
-  
+
 /* ================================================= */
 /* ==================== MOBILE ===================== */
 /* ================================================= */
@@ -1433,7 +1428,7 @@ body::after{
 <body>
 
 <div class="vignette"></div>
-  
+
 <div class="forest-atmosphere">
 
 <div class="soft-scales">
@@ -1446,22 +1441,22 @@ body::after{
 
 </div>
 
-  <div class="forest-fog"></div>
+<div class="forest-fog"></div>
 
-  <div class="gold-particles">
+<div class="gold-particles">
 
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-
-  </div>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
 
 </div>
 
-<<header class="header">
+</div>
+
+<header class="header">
 
   <a href="index.html" class="logo">
     Orumi Journeys
@@ -1478,7 +1473,7 @@ body::after{
   </nav>
 
 </header>
-  
+
 <section class="hero">
 
   <div class="hero-image">
@@ -1490,19 +1485,19 @@ body::after{
   <div class="hero-content">
 
     <div class="location">
-  TAIWAN • JIUFEN
-</div>
+      TAIWAN • JIUFEN
+    </div>
 
-<h1>
-  Jiufen
-</h1>
+    <h1>
+      Jiufen
+    </h1>
 
-<p>
-  Un pueblo suspendido entre montañas y niebla donde las linternas rojas iluminan callejones infinitos, casas de té tradicionales y paisajes que evocan la magia de Studio Ghibli.
-</p>
-    
+    <p>
+      A village suspended between mountains and mist, where red lanterns illuminate endless alleyways, traditional tea houses, and landscapes that evoke the magic of Studio Ghibli.
+    </p>
+
     <a href="#itinerary" class="btn">
-      Explorar itinerario →
+      Explore Itinerary →
     </a>
 
   </div>
@@ -1512,20 +1507,16 @@ body::after{
 <section class="section">
 
   <h2 class="section-title">
-  Entre linternas y niebla
-</h2>
+    Between Lanterns and Mist
+  </h2>
 
-<p class="section-text">
-  Jiufen combina historia minera, arquitectura tradicional taiwanesa y una atmósfera nocturna que parece extraída de un mundo fantástico.
-</p>
-  
+  <p class="section-text">
+    Jiufen combines mining history, traditional Taiwanese architecture, and a nighttime atmosphere that feels taken from a fantasy world.
+  </p>
+
 </section>
 
 <section class="section">
-  
-<!-- ================================================= -->
-<!-- ================== GALLERY TITLE ================ -->
-<!-- ================================================= -->
 
 <div class="gallery-intro">
 
@@ -1534,33 +1525,31 @@ body::after{
   </span>
 
   <h2>
-    Galería
+    Gallery
   </h2>
 
   <div class="gallery-line"></div>
 
   <p>
-
-    Fragmentos de un pueblo montañoso donde las escaleras interminables, las casas de té iluminadas y la niebla crean un escenario digno de una película de fantasía.
-
+    Fragments of a mountain village where endless stairways, illuminated tea houses, and drifting mist create a setting worthy of a fantasy film.
   </p>
 
 </div>
-  
-  <div class="gallery">
 
-    <img src="imgjiufen/1landj.jpg" alt="">
-    <img src="imgjiufen/2landj.jpg" alt="">
-    <img src="imgjiufen/3landj.jpg" alt="">
-    
-  </div>
+<div class="gallery">
+
+  <img src="imgjiufen/1landj.jpg" alt="">
+  <img src="imgjiufen/2landj.jpg" alt="">
+  <img src="imgjiufen/3landj.jpg" alt="">
+
+</div>
 
 </section>
 
 <section class="section">
 
   <h2 class="section-title">
-    Experiencias
+    Experiences
   </h2>
 
   <div class="activities">
@@ -1572,11 +1561,11 @@ body::after{
       <div class="activity-content">
 
         <h3>
-          Casas de té tradicionales
+          Traditional Tea Houses
         </h3>
 
         <p>
-          Degustaciones de té taiwanés en históricos salones con vistas a montañas y al océano.
+          Taiwanese tea tastings in historic tea rooms overlooking mountains and the ocean.
         </p>
 
       </div>
@@ -1590,11 +1579,11 @@ body::after{
       <div class="activity-content">
 
         <h3>
-          Callejones iluminados
+          Lantern-Lit Alleyways
         </h3>
 
         <p>
-          Paseos nocturnos entre escaleras, faroles rojos y rincones que parecen salidos de un cuento.
+          Evening walks among stairways, red lanterns, and hidden corners that seem straight out of a fairytale.
         </p>
 
       </div>
@@ -1608,11 +1597,11 @@ body::after{
       <div class="activity-content">
 
         <h3>
-          Fotografía cinematográfica
+          Cinematic Photography
         </h3>
 
         <p>
-          Escenarios llenos de niebla, arquitectura tradicional y vistas panorámicas ideales para capturar la esencia de Jiufen.
+          Mist-filled scenery, traditional architecture, and panoramic viewpoints ideal for capturing the essence of Jiufen.
         </p>
 
       </div>
@@ -1621,22 +1610,19 @@ body::after{
 
   </div>
 
-</section>  
+</section>
+
 <section class="section" id="itinerary">
 
   <h2 class="section-title">
-    Experiencias por Día
+    Daily Experiences
   </h2>
 
   <p class="section-text">
-
-    Una travesía lenta entre bosques ancestrales, lluvia suave, ryokans tradicionales y paisajes que parecen salidos de una película de Studio Ghibli.
-
+    A slow journey through historic streets, mist-covered mountains, traditional tea culture, and landscapes that feel inspired by a Studio Ghibli masterpiece.
   </p>
 
   <div class="itinerary-grid">
-
-    <!-- ================= DAY 1 ================= -->
 
     <div class="experience-card">
 
@@ -1644,30 +1630,20 @@ body::after{
 
       <div class="experience-content">
 
-        <h3>
-  Día 1 — Llegada a Jiufen
-</h3>
+        <h3>Day 1 — Arrival in Jiufen</h3>
 
-<ul>
+        <ul>
+          <li>Transfer from Taipei</li>
+          <li>Check-in at a traditional accommodation</li>
+          <li>First walk through Jiufen Old Street</li>
+          <li>Local markets and street food</li>
+          <li>Sunset over the northern coast</li>
+          <li>Taiwanese dinner</li>
+        </ul>
 
-<li>Traslado desde Taipei</li>
-
-<li>Check-in en alojamiento tradicional</li>
-
-<li>Primer recorrido por Jiufen Old Street</li>
-
-<li>Mercados locales y gastronomía callejera</li>
-
-<li>Atardecer sobre la costa norte</li>
-
-<li>Cena taiwanesa</li>
-
-</ul>
       </div>
 
     </div>
-
-    <!-- ================= DAY 2 ================= -->
 
     <div class="experience-card">
 
@@ -1675,30 +1651,20 @@ body::after{
 
       <div class="experience-content">
 
-       <h3>
-  Día 2 — El Corazón de Jiufen
-</h3>
+        <h3>Day 2 — The Heart of Jiufen</h3>
 
-<ul>
+        <ul>
+          <li>Guided walk through historic alleyways</li>
+          <li>Visit to A-Mei Tea House</li>
+          <li>Traditional tea ceremony</li>
+          <li>Urban photography session</li>
+          <li>Lantern-lit evening stroll</li>
+          <li>Ghibli-inspired themed dinner</li>
+        </ul>
 
-<li>Recorrido guiado por callejones históricos</li>
-
-<li>Visita a A-Mei Tea House</li>
-
-<li>Ceremonia tradicional del té</li>
-
-<li>Fotografía urbana</li>
-
-<li>Paseo nocturno entre linternas</li>
-
-<li>Cena temática inspirada en Ghibli</li>
-
-</ul>
       </div>
 
     </div>
-
-    <!-- ================= DAY 3 ================= -->
 
     <div class="experience-card">
 
@@ -1706,28 +1672,19 @@ body::after{
 
       <div class="experience-content">
 
-       <h3>
-  Día 3 — Senderos y Montañas
-</h3>
+        <h3>Day 3 — Trails and Mountains</h3>
 
-<ul>
+        <ul>
+          <li>Scenic mountain route</li>
+          <li>Natural viewpoints</li>
+          <li>Traditional lunch</li>
+          <li>Cultural exploration</li>
+          <li>Free time for artisan shopping</li>
+        </ul>
 
-<li>Ruta panorámica de montaña</li>
-
-<li>Miradores naturales</li>
-
-<li>Almuerzo tradicional</li>
-
-<li>Exploración cultural</li>
-
-<li>Tiempo libre para compras artesanales</li>
-
-</ul>
       </div>
 
     </div>
-
-    <!-- ================= DAY 4 ================= -->
 
     <div class="experience-card">
 
@@ -1735,29 +1692,19 @@ body::after{
 
       <div class="experience-content">
 
-        <h3>
-  Día 4 — Costa y Cultura
-</h3>
+        <h3>Day 4 — Coast and Culture</h3>
 
-<ul>
-
-<li>Excursión a la costa noreste</li>
-
-<li>Templos tradicionales</li>
-
-<li>Visita a pueblos cercanos</li>
-
-<li>Experiencias gastronómicas locales</li>
-
-<li>Cena de despedida</li>
-
-</ul>
+        <ul>
+          <li>Excursion to the northeast coast</li>
+          <li>Traditional temples</li>
+          <li>Visit to nearby villages</li>
+          <li>Local culinary experiences</li>
+          <li>Farewell dinner</li>
+        </ul>
 
       </div>
 
     </div>
-
-    <!-- ================= DAY 5 ================= -->
 
     <div class="experience-card">
 
@@ -1765,21 +1712,15 @@ body::after{
 
       <div class="experience-content">
 
-        <h3>
-  Día 5 — Regreso
-</h3>
+        <h3>Day 5 — Departure</h3>
 
-<ul>
+        <ul>
+          <li>Traditional breakfast</li>
+          <li>Final walk through Jiufen</li>
+          <li>Photos and souvenirs</li>
+          <li>Transfer to Taipei</li>
+        </ul>
 
-<li>Desayuno tradicional</li>
-
-<li>Paseo final por Jiufen</li>
-
-<li>Fotografías y recuerdos</li>
-
-<li>Traslado a Taipei</li>
-
-</ul>
       </div>
 
     </div>
@@ -1787,21 +1728,15 @@ body::after{
   </div>
 
 </section>
-  
-<!-- ================================================= -->
-<!-- ================= PACKAGE SECTION =============== -->
-<!-- ================================================= -->
 
 <section class="section" id="packages">
 
   <h2 class="section-title">
-    Vive Jiufen
+    Experience Jiufen
   </h2>
 
   <p class="section-text">
-
-    Descubre una isla donde la lluvia, los bosques y el silencio crean una experiencia única inspirada en el espíritu de Studio Ghibli.
-
+    Discover a destination where mist, mountains, tea culture, and timeless streets create a magical experience inspired by the spirit of Studio Ghibli.
   </p>
 
   <div class="package-grid">
@@ -1813,102 +1748,71 @@ body::after{
       <div class="package-content">
 
         <h3>
-          Jiufen — Viaje inspirado en El Viaje de Chihiro
+          Jiufen — Spirited Away Inspired Journey
         </h3>
 
         <p>
-
-          5 Días / 4 Noches
-
+          5 Days / 4 Nights
         </p>
 
         <p>
-
-          Una experiencia inmersiva en Jiufen inspirada en la atmósfera mágica que evocó la creación de los escenarios más emblemáticos de Studio Ghibli.
-
+          An immersive Jiufen experience inspired by the magical atmosphere that influenced some of Studio Ghibli’s most iconic settings.
         </p>
 
         <p>
-
-Linternas rojas, callejones infinitos, casas de té tradicionales, mercados históricos y montañas cubiertas por niebla crean una experiencia inolvidable.
-
+          Red lanterns, endless alleyways, traditional tea houses, historic markets, and mist-covered mountains create an unforgettable adventure.
         </p>
 
-        <!-- ========================================= -->
-        <!-- ============== INCLUYE ================== -->
-        <!-- ========================================= -->
-
         <h4>
-          Qué incluye
+          What's Included
         </h4>
 
         <ul>
-
-          <li>Traslados desde Taipei</li>
-<li>4 noches de alojamiento</li>
-<li>Desayunos tradicionales</li>
-<li>Ceremonia del té</li>
-<li>Tours guiados</li>
-<li>Experiencias gastronómicas</li>
-<li>Entradas culturales</li>
-<li>Mapa ilustrado exclusivo</li>
-          
+          <li>Transfers from Taipei</li>
+          <li>4 nights accommodation</li>
+          <li>Traditional breakfasts</li>
+          <li>Tea ceremony</li>
+          <li>Guided tours</li>
+          <li>Culinary experiences</li>
+          <li>Cultural admission tickets</li>
+          <li>Exclusive illustrated map</li>
         </ul>
 
-        <!-- ========================================= -->
-        <!-- ============== EXPERIENCIA ============== -->
-        <!-- ========================================= -->
-
         <h4>
-          Experiencia
+          Experience Highlights
         </h4>
 
         <ul>
-
-          <li>Inspiración Studio Ghibli</li>
-<li>Slow Travel</li>
-<li>Fotografía urbana</li>
-<li>Cultura taiwanesa</li>
-<li>Gastronomía local</li>
-<li>Calles iluminadas por linternas</li>
+          <li>Studio Ghibli inspiration</li>
+          <li>Slow Travel philosophy</li>
+          <li>Urban photography</li>
+          <li>Taiwanese culture</li>
+          <li>Local gastronomy</li>
+          <li>Lantern-lit streets</li>
         </ul>
 
-        <!-- ========================================= -->
-        <!-- ============ INFO PRÁCTICA ============== -->
-        <!-- ========================================= -->
-
         <h4>
-          Información práctica
+          Practical Information
         </h4>
 
         <ul>
-
-          <li>Mejor temporada: otoño y primavera</li>
-<li>Nivel físico: bajo</li>
-<li>Zapatos cómodos recomendados</li>
-<li>Chaqueta ligera para la noche</li>
-<li>Cámara fotográfica recomendada</li>
+          <li>Best season: Spring and Autumn</li>
+          <li>Physical level: Easy</li>
+          <li>Comfortable shoes recommended</li>
+          <li>Light jacket for evenings</li>
+          <li>Camera recommended</li>
         </ul>
-
-        <!-- ========================================= -->
-        <!-- ================= PRECIO ================ -->
-        <!-- ========================================= -->
 
         <div class="price">
+          USD 1,050 per person
+        </div>
 
-  USD 1,050 por persona
-
-</div>
         <p>
-
-          No incluye vuelos internacionales.
-
+          International flights are not included.
         </p>
 
         <a href="book-now.html" class="btn">
-
-          Reservar experiencia →
-
+          Book Experience →
         </a>
 
       </div>
@@ -1918,6 +1822,6 @@ Linternas rojas, callejones infinitos, casas de té tradicionales, mercados hist
   </div>
 
 </section>
-  
+
 </body>
 </html>
